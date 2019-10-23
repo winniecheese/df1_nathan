@@ -57,11 +57,11 @@ public class ConexionEstatica {
     public static Usuario existeUsuario(String email, String password) {
         Usuario existe = null;
         try {
-            String sentencia1 = "SELECT * FROM Usuarios WHERE email = '" + email + "' and password = '" + password + "'";
+            String sentencia1 = "SELECT * FROM Usuarios, Asignar_Rol WHERE email = '" + email + "' and password = '" + password + "' and Usuarios.cod_user = Asignar_Rol.cod_user";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia1);
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
-                existe = new Usuario(Conj_Registros.getInt("cod_user"), Conj_Registros.getString("nombre"), Conj_Registros.getString("apellidos"), Conj_Registros.getString("email"), Conj_Registros.getString("password"));
+                existe = new Usuario(Conj_Registros.getInt("cod_user"), Conj_Registros.getString("nombre"), Conj_Registros.getString("apellidos"), Conj_Registros.getInt("cod_rol"), Conj_Registros.getString("email"), Conj_Registros.getString("password"));
             }
         } catch (SQLException ex) {
             System.out.println("Error en el acceso a la BD.");
