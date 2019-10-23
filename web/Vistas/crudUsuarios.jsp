@@ -13,33 +13,44 @@
         <title>Desafío nº1</title>
     </head>
     <body>
-        <body>
-        <%
-            Usuario u = (Usuario) session.getAttribute("userLogin");
-            out.println("Bienvenido al CRUD, " + u.getNombre() + " " + u.getApellidos() + "<br><br>");
-
-            ListaUsuarios lis = (ListaUsuarios) session.getAttribute("lista");
-
-            for (int i = 0; i < lis.size(); i++) {
-                Usuario dat = lis.get(i);
-        %>
+    <body>
         <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
-            <label for="email">e-mail: </label><input type="text" id="email" name="email" value="<%=dat.getEmail()%>" readonly="">
-            <label for="nombre">Nombre: </label><input type="text" id="nombre" name="nombre" value="<%=dat.getNombre()%>">
-            <label for="apellidos">Apellidos: </label><input type="text" id="apellidos" name="apellidos" value="<%=dat.getApellidos()%>">
-            <input type="submit" id="eliminar" name="botonCRUD" value="Eliminar">
-            <input type="submit" id="modificar" name="botonCRUD" value="Modificar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>e-mail</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        Usuario u = (Usuario) session.getAttribute("userLogin");
+                        out.println("Bienvenido al CRUD, " + u.getNombre() + " " + u.getApellidos() + "<br><br>");
+
+                        ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
+
+                        for (int i = 0; i < lis.size(); i++) {
+                            Usuario user = lis.get(i);
+                    %>
+                    <tr>
+                        <td><input type="text" id="email" name="email" value="<%=user.getEmail()%>" readonly=""></td>
+                        <td><input type="text" id="nombre" name="nombre" value="<%=user.getNombre()%>"></td>
+                        <td><input type="text" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>"></td>
+                        <td><input type="submit" id="eliminar" name="botonCRUD" value="Eliminar"></td>
+                        <td><input type="submit" id="modificar" name="botonCRUD" value="Modificar"></td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                </tbody>
+            </table>
             <br>
-            <br>
-        </form>
-        <%
-            }
-        %>
-        <form name="formulario2" action="../Controladores/controlador.jsp" method="POST">
             <input type="submit" id="aniadir" name="aniadir" value="Añadir">
             <br>
             <br>
             <input type="submit" id="volver" name="volver" value="Volver">
+            <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>
     </body>
 </html>

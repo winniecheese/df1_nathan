@@ -90,4 +90,63 @@
             response.sendRedirect("../Vistas/menuAdminGeneral.jsp");
         }
     }
+
+    //************************************************************************//
+    if (request.getParameter("verCuadrante") != null) {
+
+    }
+
+    //************************************************************************//
+    if (request.getParameter("gestAulas") != null) {
+
+        response.sendRedirect("../Vistas/crudAulas.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("gestFranjas") != null) {
+
+        response.sendRedirect("../Vistas/crudFranjas.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("gestUsuarios") != null) {
+        ConexionEstatica.nueva();
+        ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+        session.setAttribute("listaUsuarios", lisUsuarios);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/crudUsuarios.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("verBitacora") != null) {
+
+    }
+
+    //************************************************************************//
+    if (request.getParameter("aniadir") != null) {
+        response.sendRedirect("../Vistas/registro2.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("aceptarRegistro2") != null) {
+        int n = 4;
+        String email = request.getParameter("email");
+        String nombre = request.getParameter("nombre");
+        String apellidos = request.getParameter("apellidos");
+        String passw = request.getParameter("password1");
+        if (passw.equals(request.getParameter("password2"))) {
+            String codClave = Codificar.codifica(passw);
+            ConexionEstatica.nueva();
+            ConexionEstatica.Insertar_Usuario(n, nombre, apellidos, email, codClave);
+            ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+            session.setAttribute("listaUsuarios", lisUsuarios);
+            ConexionEstatica.cerrarBD();
+        }
+        response.sendRedirect("../Vistas/crudUsuarios.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("volverRegistro2") != null) {
+        response.sendRedirect("../Vistas/crudUsuarios.jsp");
+    }
 %>

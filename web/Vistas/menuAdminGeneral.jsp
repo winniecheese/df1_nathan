@@ -13,13 +13,10 @@
     </head>
     <body>
         <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
-            <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
+            <input type="submit" id="gestUsuarios" name="gestUsuarios" value="Gestionar usuarios">
             <br>
             <br>
-            <input type="submit" id="gestAulas" name="gestAulas" value="Gestionar aulas">
-            <br>
-            <br>
-            <input type="submit" id="gestFranjas" name="gestFranjas" value="Gestionar franjas horarias">
+            <input type="submit" id="verBitacora" name="verBitacora" value="Ver bitácora">
             <br>
             <br>
             <input type="submit" id="volverGen" name="volverGen" value="Volver">
