@@ -39,7 +39,7 @@
             <input type="submit" id="aniadir" name="aniadir" value="Añadir">
             <br>
             <br>
-            <input type="submit" name="volver" value="Volver">
+            <input type="submit" id="volver" name="volver" value="Volver">
         </form>
     </body>
 </html>

@@ -42,8 +42,17 @@
 
     //************************************************************************//
     if (request.getParameter("volver") != null) {
-        session.invalidate();
         response.sendRedirect("../index.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("volverAula") != null) {
+        response.sendRedirect("../Vistas/rol2.jsp");
+    }
+
+    //************************************************************************//
+    if (request.getParameter("volverGen") != null) {
+        response.sendRedirect("../Vistas/rol3.jsp");
     }
 
     //************************************************************************//
@@ -67,11 +76,11 @@
         if (request.getParameter("seleRol").equals("prof")) {
             response.sendRedirect("../Vistas/panelReservas.jsp");
         }
-        if (request.getParameter("seleRol").equals("adminGen")) {
-            response.sendRedirect("");
-        }
         if (request.getParameter("seleRol").equals("adminAula")) {
-            response.sendRedirect("");
+            response.sendRedirect("../Vistas/menuAdminAula.jsp");
+        }
+        if (request.getParameter("seleRol").equals("adminGen")) {
+            response.sendRedirect("../Vistas/menuAdminGeneral.jsp");
         }
     }
 %>
