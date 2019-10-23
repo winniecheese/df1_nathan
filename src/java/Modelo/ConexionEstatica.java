@@ -146,5 +146,20 @@ public class ConexionEstatica {
         }
         return lis;
     }
+    
+    public static ListaFranjas obtenerFranjas() {
+        ListaFranjas lis = new ListaFranjas();
+        Franja f = null;
+        try {
+            String sentencia = "SELECT * FROM Franja_Horaria";
+            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            while (Conj_Registros.next()) {
+                f = new Franja(Conj_Registros.getInt("cod_franja"), Conj_Registros.getString("hora"));
+                lis.add(f);
+            }
+        } catch (SQLException ex) {
+        }
+        return lis;
+    }
 
 }

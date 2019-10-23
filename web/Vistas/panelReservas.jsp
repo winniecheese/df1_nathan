@@ -18,7 +18,7 @@
             <input type="date" id="fecha" name="fecha">
             <select name="seleAula">
                 <%
-                    ListaAulas lis = (ListaAulas) session.getAttribute("lista");
+                    ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
 
                     for (int i = 0; i < lis.size(); i++) {
                         Aula a = lis.get(i);

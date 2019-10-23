@@ -21,6 +21,12 @@
             session.setAttribute("userLogin", u);
             session.setAttribute("rol", n);
             if (n == 1) {
+                ConexionEstatica.nueva();
+                ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+                ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+                ConexionEstatica.cerrarBD();
+                session.setAttribute("listaAulas", lisAulas);
+                session.setAttribute("listaFranjas", lisFranjas);
                 response.sendRedirect("../Vistas/panelReservas.jsp");
             }
             if (n == 2) {
@@ -42,6 +48,7 @@
 
     //************************************************************************//
     if (request.getParameter("volver") != null) {
+        session.invalidate();
         response.sendRedirect("../index.jsp");
     }
 
