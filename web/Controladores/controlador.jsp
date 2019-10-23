@@ -15,11 +15,6 @@
         ConexionEstatica.nueva();
         Usuario u = ConexionEstatica.existeUsuario(email, passw);
         ConexionEstatica.cerrarBD();
-        if (u == null) {
-            String mens = "Has fallao, campeón.";
-            session.setAttribute("failLogin", mens);
-            response.sendRedirect("../index.jsp");
-        }
         if (u != null) {
             session.setAttribute("userLogin", u);
             if (u.ctosRoles() == 1) {
@@ -28,6 +23,8 @@
             if (u.ctosRoles() >= 2) {
                 response.sendRedirect("../Vistas/rol.jsp");
             }
+        } else {
+            response.sendRedirect("../index.jsp");
         }
     }
 

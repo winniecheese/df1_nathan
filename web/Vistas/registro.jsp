@@ -16,15 +16,15 @@
         <h3>Registro</h3>
         <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
             <label for="email">e-mail: </label>
-            <input type="text" id="email" name="email">
+            <input type="email" id="email" name="email">
             <br>
             <br>
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre">
+            <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]{1,35}">
             <br>
             <br>
             <label for="apellidos">Apellidos </label>
-            <input type="text" id="apellidos" name="apellidos">
+            <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-z]{1,35}">
             <br>
             <br>
             <label for="password1">Contraseña: </label>

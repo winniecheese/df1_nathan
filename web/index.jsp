@@ -11,6 +11,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
+        <script src="jquery-3.4.1.min.js"></script>
+        <!--<script>
+            $(document).ready(function () {
+                $("#aceptarLogin").click(function () {
+                    var mail = $("#email").val();
+                    var passw = $("#password").val();
+                    if (mail === null || passw === null) {
+                        alert("Tienes por ahí algún campo vacío");
+                    }
+                });
+            });
+        </script>-->
     </head>
     <body>
         <h3>Iniciar sesión</h3>
@@ -23,16 +35,6 @@
             <input type="password" id="password" name="password" placeholder="Escriba su contraseña...">
             <br>
             <br>
-            <%
-                if (session.getAttribute("failLogin") != null) {
-                    out.println(session.getAttribute("failLogin"));
-
-            %>
-            <br>
-            <br>
-            <%
-                }
-            %>
             <input type="submit" name="aceptarLogin" value="Iniciar sesión">
             <br>
             <br>
