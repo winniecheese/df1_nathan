@@ -20,7 +20,7 @@ public class Usuario {
     private int cod_user;
     private String nombre;
     private String apellidos;
-    private LinkedList<Integer> rol;
+    private int rol;
     private String email;
     private String password;
     
@@ -28,7 +28,7 @@ public class Usuario {
     //*****************************Constructores******************************//
     //************************************************************************//
 
-    public Usuario(int cod_user, String nombre, String apellidos, LinkedList<Integer> rol, String email, String password) {
+    public Usuario(int cod_user, String nombre, String apellidos, int rol, String email, String password) {
         this.cod_user = cod_user;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -77,11 +77,11 @@ public class Usuario {
         this.apellidos = apellidos;
     }
 
-    public LinkedList<Integer> getRol() {
+    public int getRol() {
         return rol;
     }
 
-    public void setRol(LinkedList<Integer> rol) {
+    public void setRol(int rol) {
         this.rol = rol;
     }
 
@@ -104,13 +104,5 @@ public class Usuario {
     //************************************************************************//
     //********************************Métodos*********************************//
     //************************************************************************//
-
-    public void addRol(int r) {
-        this.rol.add(r);
-    }
-    
-    public int ctosRoles() {
-        return rol.size();
-    }
     
 }

@@ -16,11 +16,16 @@
         Usuario u = ConexionEstatica.existeUsuario(email, passw);
         ConexionEstatica.cerrarBD();
         if (u != null) {
+            int n = u.getRol();
             session.setAttribute("userLogin", u);
-            if (u.ctosRoles() == 1) {
+            session.setAttribute("rol", n);
+            if (n == 1) {
                 response.sendRedirect("../Vistas/panelReservas.jsp");
             }
-            if (u.ctosRoles() >= 2) {
+            if (n == 2) {
+                response.sendRedirect("../Vistas/rol.jsp");
+            }
+            if (n == 3) {
                 response.sendRedirect("../Vistas/rol.jsp");
             }
         } else {
