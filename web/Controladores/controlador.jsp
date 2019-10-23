@@ -12,8 +12,9 @@
     if (request.getParameter("aceptarLogin") != null) {
         String email = request.getParameter("email");
         String passw = request.getParameter("password");
+        String codClave = Codificar.codifica(passw);
         ConexionEstatica.nueva();
-        Usuario u = ConexionEstatica.existeUsuario(email, passw);
+        Usuario u = ConexionEstatica.existeUsuario(email, codClave);
         ConexionEstatica.cerrarBD();
         if (u != null) {
             int n = u.getRol();
@@ -52,8 +53,9 @@
         String apellidos = request.getParameter("apellidos");
         String passw = request.getParameter("password1");
         if (passw.equals(request.getParameter("password2"))) {
+            String codClave = Codificar.codifica(passw);
             ConexionEstatica.nueva();
-            ConexionEstatica.Insertar_Usuario(email, nombre, apellidos, passw);
+            ConexionEstatica.Insertar_Usuario(email, nombre, apellidos, codClave);
             ConexionEstatica.cerrarBD();
         }
         response.sendRedirect("../Vistas/registro.jsp");
