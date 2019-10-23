@@ -24,10 +24,10 @@
                 response.sendRedirect("../Vistas/panelReservas.jsp");
             }
             if (n == 2) {
-                response.sendRedirect("../Vistas/rol.jsp");
+                response.sendRedirect("../Vistas/rol2.jsp");
             }
             if (n == 3) {
-                response.sendRedirect("../Vistas/rol.jsp");
+                response.sendRedirect("../Vistas/rol3.jsp");
             }
         } else {
             response.sendRedirect("../index.jsp");
@@ -48,6 +48,7 @@
 
     //************************************************************************//
     if (request.getParameter("aceptarRegistro") != null) {
+        int n = 3;
         String email = request.getParameter("email");
         String nombre = request.getParameter("nombre");
         String apellidos = request.getParameter("apellidos");
@@ -55,7 +56,7 @@
         if (passw.equals(request.getParameter("password2"))) {
             String codClave = Codificar.codifica(passw);
             ConexionEstatica.nueva();
-            ConexionEstatica.Insertar_Usuario(email, nombre, apellidos, codClave);
+            ConexionEstatica.Insertar_Usuario(n, nombre, apellidos, email, codClave);
             ConexionEstatica.cerrarBD();
         }
         response.sendRedirect("../Vistas/registro.jsp");

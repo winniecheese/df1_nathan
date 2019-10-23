@@ -115,8 +115,8 @@ public class ConexionEstatica {
     }
 
     //----------------------------------------------------------
-    public static void Insertar_Usuario(String nombre, String apellidos, String email, String password) throws SQLException {
-        String Sentencia = "INSERT INTO Usuarios VALUES ('" + email + "','" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
+    public static void Insertar_Usuario(int n, String nombre, String apellidos, String email, String password) throws SQLException {
+        String Sentencia = "INSERT INTO Usuarios VALUES ('" + n + "','" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : rol
+    Document   : rol3
     Created on : 18-oct-2019, 12:12:52
     Author     : Nathan
 --%>
@@ -18,9 +18,11 @@
             <select name="seleRol">
                 <option value="sel" selected disabled>Selecciona un rol</option>
                 <option value="prof">Profesor</option>
-                <option value="adminGen">Administrador general</option>
                 <option value="adminAula">Administrador de aula</option>
+                <option value="adminGen">Administrador general</option>
             </select>
+            <br>
+            <br>
             <input type="submit" id="aceptarRol" name="aceptarRol" value="Entrar">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>

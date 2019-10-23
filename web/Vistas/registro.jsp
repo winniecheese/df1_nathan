@@ -20,11 +20,11 @@
             <br>
             <br>
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]{1,35}">
+            <input type="text" id="nombre" name="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
             <br>
             <br>
             <label for="apellidos">Apellidos </label>
-            <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-z]{1,35}">
+            <input type="text" id="apellidos" name="apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
             <br>
             <br>
             <label for="password1">Contraseña: </label>
