@@ -154,7 +154,7 @@ public class ConexionEstatica {
             String sentencia = "SELECT * FROM Franja_Horaria";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
-                f = new Franja(Conj_Registros.getInt("cod_franja"), Conj_Registros.getString("hora"));
+                f = new Franja(Conj_Registros.getInt("cod_franja"), Conj_Registros.getString("hora_empieza"), Conj_Registros.getString("hora_termina"));
                 lis.add(f);
             }
         } catch (SQLException ex) {

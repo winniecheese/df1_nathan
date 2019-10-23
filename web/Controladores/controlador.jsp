@@ -98,13 +98,19 @@
 
     //************************************************************************//
     if (request.getParameter("gestAulas") != null) {
-
+        ConexionEstatica.nueva();
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        session.setAttribute("listaAulas", lisAulas);
+        ConexionEstatica.cerrarBD();
         response.sendRedirect("../Vistas/crudAulas.jsp");
     }
 
     //************************************************************************//
     if (request.getParameter("gestFranjas") != null) {
-
+        ConexionEstatica.nueva();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        session.setAttribute("listaFranjas", lisFranjas);
+        ConexionEstatica.cerrarBD();
         response.sendRedirect("../Vistas/crudFranjas.jsp");
     }
 

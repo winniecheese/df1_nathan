@@ -21,6 +21,8 @@
                         <th>e-mail</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
