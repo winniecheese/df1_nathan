@@ -31,7 +31,6 @@
             <input type="text" id="email" name="email" placeholder="Escriba su e-mail...">
             <br>
             <br>
-            <br>
             <label for="password">Contraseña: </label>
             <input type="password" id="password" name="password" placeholder="Escriba su contraseña...">
             <br>
