@@ -119,6 +119,12 @@ public class ConexionEstatica {
         String Sentencia = "INSERT INTO usuarios VALUES (0,'" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
+    
+    //----------------------------------------------------------
+    public static void Update_Usuario(String nombre, String apellidos, String email) throws SQLException {
+        String Sentencia = "UPDATE usuarios SET nombre = '" + nombre + "', apellidos = '" + apellidos + "' WHERE email = '" + email + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
 
     //----------------------------------------------------------
     public static void Insertar_Rol(int cod_user, int cod_rol) throws SQLException {

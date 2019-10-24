@@ -159,4 +159,28 @@
     if (request.getParameter("volverRegistro2") != null) {
         response.sendRedirect("../Vistas/crudUsuarios.jsp");
     }
+
+    //************************************************************************//
+    if (request.getParameter("botonCRUD") != null) {
+        if (request.getParameter("botonCRUD").equals("ELiminar")) {
+            ConexionEstatica.nueva();
+            String email = request.getParameter("email");
+            ConexionEstatica.Borrar_Usuario(email);
+            ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+            session.setAttribute("listaUsuarios", lisUsuarios);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../Vistas/crudUsuarios.jsp");
+        }
+        if (request.getParameter("botonCRUD").equals("Modificar")) {
+            ConexionEstatica.nueva();
+            String email = request.getParameter("email");
+            String nombre = request.getParameter("nombre");
+            String apellidos = request.getParameter("apellidos");
+            ConexionEstatica.Update_Usuario(email, nombre, apellidos);
+            ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+            session.setAttribute("listaUsuarios", lisUsuarios);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../Vistas/crudUsuarios.jsp");
+        }
+    }
 %>
