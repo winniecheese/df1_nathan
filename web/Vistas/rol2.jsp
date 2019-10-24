@@ -1,7 +1,7 @@
 <%-- 
     Document   : rol2
     Created on : 23-oct-2019, 20:45:35
-    Author     : Nathan
+    Author     : Nathaniel
 --%>
 
 <%@page import="Modelo.*"%>
