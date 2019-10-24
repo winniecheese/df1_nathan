@@ -16,6 +16,8 @@
         <h3>Panel de reservas</h3>
         <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
             <input type="date" id="fecha" name="fecha">
+            <br>
+            <br>
             <select name="seleAula">
                 <%
                     ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
@@ -28,14 +30,22 @@
                     }
                 %>
             </select>
+            <br>
+            <br>
             <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
+            <br>
+            <br>
             <%
                 out.println("Aula " + request.getParameter("seleAula"));
             %>
+            <br>
+            <br>
             <table>
                 <thead>
                     <tr>
-                        <th>Hora</th>
+                        <th>Código de franja</th>
+                        <th>Empieza</th>
+                        <th>Termina</th>
                         <th>Reservado</th>
                     </tr>
                 </thead>
@@ -47,7 +57,9 @@
                             Franja fran = lisFran.get(i);
                     %>
                     <tr>
-                        <td><%out.println(fran.getHora());%></td>
+                        <td><%out.println(fran.getCod_franja());%></td>
+                        <td><%out.println(fran.getHora_empieza());%></td>
+                        <td><%out.println(fran.getHora_termina());%></td>
                         <td><input type="button" class="libre" name="libre" value="Libre"></td>
                     </tr>
                     <%
@@ -55,6 +67,7 @@
                     %>
                 </tbody>
             </table>
+            <br>
             <input type="submit" id="volver" name="volver" value="Volver">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>

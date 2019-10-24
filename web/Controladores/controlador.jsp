@@ -64,7 +64,6 @@
 
     //************************************************************************//
     if (request.getParameter("aceptarRegistro") != null) {
-        int n = 3;
         String email = request.getParameter("email");
         String nombre = request.getParameter("nombre");
         String apellidos = request.getParameter("apellidos");
@@ -72,7 +71,7 @@
         if (passw.equals(request.getParameter("password2"))) {
             String codClave = Codificar.codifica(passw);
             ConexionEstatica.nueva();
-            ConexionEstatica.Insertar_Usuario(n, nombre, apellidos, email, codClave);
+            ConexionEstatica.Insertar_Usuario(nombre, apellidos, email, codClave);
             ConexionEstatica.cerrarBD();
         }
         response.sendRedirect("../Vistas/registro.jsp");
@@ -81,6 +80,12 @@
     //************************************************************************//
     if (request.getParameter("aceptarRol") != null) {
         if (request.getParameter("seleRol").equals("prof")) {
+            ConexionEstatica.nueva();
+            ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+            ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+            ConexionEstatica.cerrarBD();
+            session.setAttribute("listaAulas", lisAulas);
+            session.setAttribute("listaFranjas", lisFranjas);
             response.sendRedirect("../Vistas/panelReservas.jsp");
         }
         if (request.getParameter("seleRol").equals("adminAula")) {
@@ -135,7 +140,6 @@
 
     //************************************************************************//
     if (request.getParameter("aceptarRegistro2") != null) {
-        int n = 4;
         String email = request.getParameter("email");
         String nombre = request.getParameter("nombre");
         String apellidos = request.getParameter("apellidos");
@@ -143,7 +147,7 @@
         if (passw.equals(request.getParameter("password2"))) {
             String codClave = Codificar.codifica(passw);
             ConexionEstatica.nueva();
-            ConexionEstatica.Insertar_Usuario(n, nombre, apellidos, email, codClave);
+            ConexionEstatica.Insertar_Usuario(nombre, apellidos, email, codClave);
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();

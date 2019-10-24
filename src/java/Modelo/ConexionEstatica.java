@@ -57,7 +57,7 @@ public class ConexionEstatica {
     public static Usuario existeUsuario(String email, String password) {
         Usuario existe = null;
         try {
-            String sentencia1 = "SELECT * FROM Usuarios, Asignar_Rol WHERE email = '" + email + "' and password = '" + password + "' and Usuarios.cod_user = Asignar_Rol.cod_user";
+            String sentencia1 = "SELECT * FROM usuarios, asignar_rol WHERE email = '" + email + "' and password = '" + password + "' and usuarios.cod_user = asignar_rol.cod_user";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia1);
             if (ConexionEstatica.Conj_Registros.next())//Si devuelve true es que existe.
             {
@@ -78,7 +78,7 @@ public class ConexionEstatica {
         ListaUsuarios lis = new ListaUsuarios();
         Usuario u = null;
         try {
-            String sentencia = "SELECT * FROM Usuarios";
+            String sentencia = "SELECT * FROM usuarios";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 u = new Usuario(Conj_Registros.getInt("cod_user"), Conj_Registros.getString("nombre"), Conj_Registros.getString("apellidos"), Conj_Registros.getString("email"), Conj_Registros.getString("password"));
@@ -110,25 +110,25 @@ public class ConexionEstatica {
     }*/
     //----------------------------------------------------------
     public static void Borrar_Rol(int cod_user, int cod_rol) throws SQLException {
-        String Sentencia = "DELETE FROM Asignar_Rol WHERE cod_user = '" + cod_user + "' AND cod_rol = '" + cod_rol + "'";
+        String Sentencia = "DELETE FROM asignar_rol WHERE cod_user = '" + cod_user + "' AND cod_rol = '" + cod_rol + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
     //----------------------------------------------------------
-    public static void Insertar_Usuario(int n, String nombre, String apellidos, String email, String password) throws SQLException {
-        String Sentencia = "INSERT INTO Usuarios VALUES ('" + n + "','" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
+    public static void Insertar_Usuario(String nombre, String apellidos, String email, String password) throws SQLException {
+        String Sentencia = "INSERT INTO usuarios VALUES (0,'" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
     //----------------------------------------------------------
     public static void Insertar_Rol(int cod_user, int cod_rol) throws SQLException {
-        String Sentencia = "INSERT INTO Asignar_Rol VALUES ('" + cod_user + "','" + cod_rol + "')";
+        String Sentencia = "INSERT INTO asignar_rol VALUES ('" + cod_user + "','" + cod_rol + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
     //----------------------------------------------------------
     public static void Borrar_Usuario(String email) throws SQLException {
-        String Sentencia = "DELETE FROM Usuarios WHERE email = '" + email + "'";
+        String Sentencia = "DELETE FROM usuarios WHERE email = '" + email + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
@@ -136,7 +136,7 @@ public class ConexionEstatica {
         ListaAulas lis = new ListaAulas();
         Aula a = null;
         try {
-            String sentencia = "SELECT * FROM Aulas";
+            String sentencia = "SELECT * FROM aulas";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 a = new Aula(Conj_Registros.getInt("cod_aula"), Conj_Registros.getString("descripcion"));
@@ -151,7 +151,7 @@ public class ConexionEstatica {
         ListaFranjas lis = new ListaFranjas();
         Franja f = null;
         try {
-            String sentencia = "SELECT * FROM Franja_Horaria";
+            String sentencia = "SELECT * FROM franja_horaria";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 f = new Franja(Conj_Registros.getInt("cod_franja"), Conj_Registros.getString("hora_empieza"), Conj_Registros.getString("hora_termina"));
