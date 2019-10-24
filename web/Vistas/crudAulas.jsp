@@ -49,7 +49,6 @@
                 </tbody>
             </table>
             <br>
-            <br>
             <input type="submit" id="volver" name="volver" value="Volver">
         </form>
     </body>
