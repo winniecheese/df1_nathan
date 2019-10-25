@@ -36,7 +36,7 @@
             <br>
             <br>
             <input type="submit" name="aceptarRegistro" value="Aceptar">
-            <input type="submit" name="volver" value="Volver">
+            <input type="submit" name="volverRegistro" value="Volver">
         </form>
     </body>
 </html>
