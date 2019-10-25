@@ -40,36 +40,37 @@
             %>
             <br>
             <br>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código de franja</th>
-                        <th>Empieza</th>
-                        <th>Termina</th>
-                        <th>Reservado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        ListaFranjas lisFran = (ListaFranjas) session.getAttribute("listaFranjas");
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código de franja</th>
+                    <th>Empieza</th>
+                    <th>Termina</th>
+                    <th>Reservado</th>
+                </tr>
+            </thead>
+        </table>
+        <%
+            ListaFranjas lisFran = (ListaFranjas) session.getAttribute("listaFranjas");
 
-                        for (int i = 0; i < lis.size(); i++) {
-                            Franja fran = lisFran.get(i);
-                    %>
-                    <tr>
-                        <td><%out.println(fran.getCod_franja());%></td>
-                        <td><%out.println(fran.getHora_empieza());%></td>
-                        <td><%out.println(fran.getHora_termina());%></td>
-                        <td><input type="button" class="libre" name="libre" value="Libre"></td>
-                    </tr>
-                    <%
-                        }
-                    %>
-                </tbody>
-            </table>
-            <br>
+            for (int i = 0; i < lisFran.size(); i++) {
+                Franja fran = lisFran.get(i);
+        %>
+        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+            <%out.println(fran.getCod_franja());%>
+            <%out.println(fran.getHora_empieza());%>
+            <%out.println(fran.getHora_termina());%>
+            <input type="button" class="libre" name="libre" value="Libre">
+        </form>
+        <%
+            }
+        %>
+        <br>
+        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
             <input type="submit" id="volver" name="volver" value="Volver">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>
-    </body>
+    </form>
+</body>
 </html>

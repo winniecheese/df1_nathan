@@ -134,7 +134,7 @@
     }
 
     //************************************************************************//
-    if (request.getParameter("aniadir") != null) {
+    if (request.getParameter("aniadirUser") != null) {
         response.sendRedirect("../Vistas/registro2.jsp");
     }
 
@@ -161,8 +161,8 @@
     }
 
     //************************************************************************//
-    if (request.getParameter("botonCRUD") != null) {
-        if (request.getParameter("botonCRUD").equals("ELiminar")) {
+    if (request.getParameter("botonCRUDusers") != null) {
+        if (request.getParameter("botonCRUDusers").equals("Eliminar")) {
             ConexionEstatica.nueva();
             String email = request.getParameter("email");
             ConexionEstatica.Borrar_Usuario(email);
@@ -171,12 +171,12 @@
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../Vistas/crudUsuarios.jsp");
         }
-        if (request.getParameter("botonCRUD").equals("Modificar")) {
+        if (request.getParameter("botonCRUDusers").equals("Modificar")) {
             ConexionEstatica.nueva();
             String email = request.getParameter("email");
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
-            ConexionEstatica.Update_Usuario(email, nombre, apellidos);
+            ConexionEstatica.Update_Usuario(nombre, apellidos, email);
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
