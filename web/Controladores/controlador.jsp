@@ -1,7 +1,7 @@
 <%-- 
     Document   : controlador
     Created on : 18-oct-2019, 11:10:14
-    Author     : Nathan
+    Author     : Nathaniel
 --%>
 
 <%@page import="Modelo.*"%>
