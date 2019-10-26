@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Elige un rol</h1>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
             <select name="seleRol">
                 <option value="sel" selected disabled>Selecciona un rol</option>
                 <option value="prof">Profesor</option>

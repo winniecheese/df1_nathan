@@ -26,7 +26,7 @@
     </head>
     <body>
         <h3>Iniciar sesión</h3>
-        <form name="formulario" action="Controladores/controlador.jsp" method="POST">
+        <form name="formulario" action="Controladores/controladorPrincipal.jsp" method="POST">
             <label for="usuario">e-mail: </label>
             <input type="text" id="email" name="email" placeholder="Escriba su e-mail...">
             <br>

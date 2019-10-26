@@ -36,13 +36,13 @@
                 ConexionEstatica.cerrarBD();
                 session.setAttribute("listaAulas", lisAulas);
                 session.setAttribute("listaFranjas", lisFranjas);
-                response.sendRedirect("../Vistas/panelReservas.jsp");
+                response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
             }
             if (n == 2) {
-                response.sendRedirect("../Vistas/rol2.jsp");
+                response.sendRedirect("../Vistas/Principal/rol2.jsp");
             }
             if (n == 3) {
-                response.sendRedirect("../Vistas/rol3.jsp");
+                response.sendRedirect("../Vistas/Principal/rol3.jsp");
             }
         } else {
             response.sendRedirect("../index.jsp");
@@ -72,7 +72,7 @@
             ConexionEstatica.Insertar_Usuario(nombre, apellidos, email, codClave);
             ConexionEstatica.cerrarBD();
         }
-        response.sendRedirect("../Vistas/registro.jsp");
+        response.sendRedirect("../Vistas/Principal/registro.jsp");
     }
 
     //************************************************************************//
@@ -114,13 +114,13 @@
             ConexionEstatica.cerrarBD();
             session.setAttribute("listaAulas", lisAulas);
             session.setAttribute("listaFranjas", lisFranjas);
-            response.sendRedirect("../Vistas/panelReservas.jsp");
+            response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
         }
         if (request.getParameter("seleRol").equals("adminAula")) {
-            response.sendRedirect("../Vistas/menuAdminAula.jsp");
+            response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
         }
         if (request.getParameter("seleRol").equals("adminGen")) {
-            response.sendRedirect("../Vistas/menuAdminGeneral.jsp");
+            response.sendRedirect("../Vistas/AdminGeneral/menuAdminGeneral.jsp");
         }
     }
     

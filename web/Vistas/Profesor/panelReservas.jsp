@@ -14,7 +14,7 @@
     </head>
     <body>
         <h3>Panel de reservas</h3>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
             <input type="date" id="fecha" name="fecha">
             <br>
             <br>

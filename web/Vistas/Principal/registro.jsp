@@ -14,7 +14,7 @@
     </head>
     <body>
         <h3>Registro</h3>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
             <label for="email">e-mail: </label>
             <input type="email" id="email" name="email">
             <br>
