@@ -38,7 +38,7 @@
             <input type="submit" name="aceptarLogin" value="Iniciar sesión">
             <br>
             <br>
-            <a href="Vistas/registro.jsp" name="enlace" value="registrar">¡Regístrate!</a>
+            <a href="Vistas/Principal/registro.jsp" name="enlace" value="registrar">¡Regístrate!</a>
         </form>
     </body>
 </html>

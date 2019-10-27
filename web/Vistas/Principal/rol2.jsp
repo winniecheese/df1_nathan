@@ -13,17 +13,19 @@
         <title>Desafío nº1</title>
     </head>
     <body>
-        <h1>Elige un rol</h1>
-        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <select name="seleRol">
-                <option value="sel" selected disabled>Selecciona un rol</option>
-                <option value="prof">Profesor</option>
-                <option value="adminAula">Administrador de aula</option>
-            </select>
-            <br>
-            <br>
-            <input type="submit" id="aceptarRol" name="aceptarRol" value="Entrar">
-            <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
-        </form>
+        
+        <main>
+            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <select name="seleRol">
+                    <option value="sel" selected disabled>Selecciona un rol</option>
+                    <option value="prof">Profesor</option>
+                    <option value="adminAula">Administrador de aula</option>
+                </select>
+                <input type="submit" id="aceptarRol" name="aceptarRol" value="Entrar">
+            </form>
+        </main>
+        <footer>
+            <address>Nathaniel Lucas Olmo</address>
+        </footer>
     </body>
 </html>

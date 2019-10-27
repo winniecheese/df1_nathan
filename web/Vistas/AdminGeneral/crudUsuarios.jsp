@@ -11,6 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </head>
     <body>
         <%
@@ -47,7 +52,7 @@
             <input type="submit" id="aniadirUser" name="aniadirUser" value="Añadir">
             <br>
             <br>
-            <input type="submit" id="volverGen" name="volverGen" value="Volver">
+            <input type="button" name="volver" value="Volver" onclick="goBack()">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>
     </body>

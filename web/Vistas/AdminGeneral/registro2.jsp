@@ -10,6 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </head>
     <body>
         <h3>Registro</h3>
@@ -35,7 +40,7 @@
             <br>
             <br>
             <input type="submit" name="aceptarRegistro2" value="Aceptar">
-            <input type="submit" name="volverRegistro2" value="Volver">
+            <input type="button" name="volver" value="Volver" onclick="goBack()">
         </form>
     </body>
 </html>

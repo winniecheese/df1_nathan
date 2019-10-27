@@ -11,6 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </head>
     <body>
         <h3>Panel de reservas</h3>
@@ -57,7 +62,7 @@
             for (int i = 0; i < lisFran.size(); i++) {
                 Franja fran = lisFran.get(i);
         %>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
             <%out.println(fran.getCod_franja());%>
             <%out.println(fran.getHora_empieza());%>
             <%out.println(fran.getHora_termina());%>
@@ -67,8 +72,8 @@
             }
         %>
         <br>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
-            <input type="submit" id="volver" name="volver" value="Volver">
+        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+            <input type="button" name="volver" value="Volver" onclick="goBack()">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>
     </form>

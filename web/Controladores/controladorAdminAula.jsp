@@ -10,14 +10,49 @@
 
 <%
     //************************************************************************//
-    //*********************** Volver a seleccionar rol ***********************//
+    //**************************** Ver cuadrante *****************************//
     //************************************************************************//
     /**
-     * Este botón nos hace volver al menú de selección de rol siempre que
-     * dispongamos del rol número 2, que consiste en tener permisos de profesor
-     * y de administrador de aula.
+     * Este botón nos lleva a ver el cuadrante del usuario que ha iniciado
+     * sesión.
      */
-    if (request.getParameter("volverAula") != null) {
-        response.sendRedirect("../Vistas/rol2.jsp");
+    if (request.getParameter("verCuadrante") != null) {
+
     }
+    
+    //************************************************************************//
+    //*************************** Gestionar aulas ****************************//
+    //************************************************************************//
+    /**
+     * Este botón nos lleva al CRUD de gestión de aulas.
+     */
+    if (request.getParameter("gestAulas") != null) {
+        ConexionEstatica.nueva();
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        session.setAttribute("listaAulas", lisAulas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/crudAulas.jsp");
+    }
+    
+    //************************************************************************//
+    //********************** Gestionar franjas horarias **********************//
+    //************************************************************************//
+    /**
+     * Este botón nos lleva al CRUD de gestión de franjas horarias.
+     */
+    if (request.getParameter("gestFranjas") != null) {
+        ConexionEstatica.nueva();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        session.setAttribute("listaFranjas", lisFranjas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/crudFranjas.jsp");
+    }
+    
+    //************************************************************************//
+    //************************************************************************//
+    //************************************************************************//
+    //***************** Controlador de administrador de aula *****************//
+    //************************************************************************//
+    //************************************************************************//
+    //************************************************************************//
 %>
