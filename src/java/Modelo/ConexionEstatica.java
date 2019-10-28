@@ -148,6 +148,12 @@ public class ConexionEstatica {
     //************************** MÉTODOS PARA AULAS **************************//
     //************************************************************************//
     //------------------------------------------------------------------------//
+    public static void Insertar_Aula(int codAula, String descripcion) throws SQLException {
+        String Sentencia = "INSERT INTO aulas VALUES ('" + codAula + "','" + descripcion + "')";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+    
+    //------------------------------------------------------------------------//
     public static void Update_Aula(int codAula, String nombreAula) throws SQLException {
         String Sentencia = "UPDATE aulas SET descripcion = '" + nombreAula + "' WHERE cod_aula = '" + codAula + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
@@ -162,6 +168,12 @@ public class ConexionEstatica {
     //************************************************************************//
     //************************* MÉTODOS PARA FRANJAS *************************//
     //************************************************************************//
+    //------------------------------------------------------------------------//
+    public static void Insertar_Franja(String horaEmpieza, String horaTermina) throws SQLException {
+        String Sentencia = "INSERT INTO franja_horaria VALUES (0,'" + horaEmpieza + "','" + horaTermina + "')";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+    
     //------------------------------------------------------------------------//
     public static void Update_Franja(int codFranja, String horaEmpieza, String horaTermina) throws SQLException {
         String Sentencia = "UPDATE franja_horaria SET hora_empieza = '" + horaEmpieza + "', hora_termina = '" + horaTermina + "' WHERE cod_franja = '" + codFranja + "'";

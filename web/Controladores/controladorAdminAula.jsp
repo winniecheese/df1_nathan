@@ -106,7 +106,7 @@
             response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
         }
     }
-    
+
     //************************************************************************//
     //***************************** Añadir aula ******************************//
     //************************************************************************//
@@ -114,14 +114,34 @@
      * Este botón nos permite añadir una nueva aula, introduciendo los valores
      * desde el CRUD de aulas.
      */
-    
+    if (request.getParameter("aniadirAula") != null) {
+        int newCod = Integer.parseInt(request.getParameter("newCod"));
+        String nombreAula = request.getParameter("newDesc");
+        ConexionEstatica.nueva();
+        ConexionEstatica.Insertar_Aula(newCod, nombreAula);
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        session.setAttribute("listaAulas", lisAulas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+    }
+
     //************************************************************************//
-    //************************* Añadir franja horaria *************************//
+    //************************* Añadir franja horaria ************************//
     //************************************************************************//
     /**
      * Este botón nos permite añadir una nueva franja horaria, introduciendo los
      * valores desde el CRUD de franjas horarias.
      */
+    if (request.getParameter("aniadirFranja") != null) {
+        String newHoraEmp = request.getParameter("newHoraEmp");
+        String newHoraTer = request.getParameter("newHoraTer");
+        ConexionEstatica.nueva();
+        ConexionEstatica.Insertar_Franja(newHoraEmp, newHoraTer);
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        session.setAttribute("listaFranjas", lisFranjas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+    }
     
     //************************************************************************//
     //************************************************************************//

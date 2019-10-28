@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <script>
             function goBack() {
@@ -67,7 +68,7 @@
             <form name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
                 <input type="text" id="newCod" name="newCod" value="">
                 <input type="text" id="newDesc" name="newDesc" value="">
-                <input type="submit" id="aniadir" name="aniadir" value="Añadir">
+                <input type="submit" id="aniadir" name="aniadirAula" value="Añadir">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">
