@@ -88,7 +88,7 @@
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/AdminGeneralcrudUsuarios.jsp");
+            response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
         }
         if (request.getParameter("botonCRUDusers").equals("Modificar")) {
             ConexionEstatica.nueva();

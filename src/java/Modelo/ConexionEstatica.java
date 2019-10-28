@@ -137,6 +137,19 @@ public class ConexionEstatica {
         String Sentencia = "DELETE FROM usuarios WHERE email = '" + email + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
+    
+    //----------------------------------------------------------
+    public static void Borrar_Aula(String codAula) throws SQLException {
+        String Sentencia = "DELETE FROM aulas WHERE cod_aula = '" + codAula + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+    
+    //----------------------------------------------------------
+    public static void Update_Aula(int codAula, String nombreAula) throws SQLException {
+        String Sentencia = "UPDATE aulas SET descripcion = '" + nombreAula + "' WHERE cod_aula = '" + codAula + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+
 
     public static ListaAulas obtenerAulas() {
         ListaAulas lis = new ListaAulas();
