@@ -13,18 +13,24 @@
         <title>Desafío nº1</title>
     </head>
     <body>
-        <h1>Elige un rol</h1>
-        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <select name="seleRol">
-                <option value="sel" selected disabled>Selecciona un rol</option>
-                <option value="prof">Profesor</option>
-                <option value="adminAula">Administrador de aula</option>
-                <option value="adminGen">Administrador general</option>
-            </select>
-            <br>
-            <br>
-            <input type="submit" id="aceptarRol" name="aceptarRol" value="Entrar">
-            <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
-        </form>
+        <header>
+            <h3>
+                <%
+                    Usuario u = (Usuario) session.getAttribute("userLogin");
+                    out.println("¡Bienvenidx, " + u.getApellidos() + " " + u.getNombre() + "!");
+                %>
+            </h3>
+        </header>
+        <main>
+            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <h3>Entrar como:</h3>
+                <input type="submit" id="prof" name="prof" value="Profesor">
+                <input type="submit" id="adminAula" name="adminAula" value="Administrador de aula">
+                 <input type="submit" id="adminAula" name="adminGen" value="Administrador general">
+            </form>
+        </main>
+        <footer>
+            <address>Nathaniel Lucas Olmo</address>
+        </footer>
     </body>
 </html>

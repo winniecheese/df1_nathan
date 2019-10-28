@@ -36,7 +36,7 @@
                 ConexionEstatica.cerrarBD();
                 session.setAttribute("listaAulas", lisAulas);
                 session.setAttribute("listaFranjas", lisFranjas);
-                response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
+                response.sendRedirect("../Vistas/Profesor/panelReservas2.jsp");
             }
             if (n == 2) {
                 response.sendRedirect("../Vistas/Principal/rol2.jsp");
@@ -54,12 +54,10 @@
     //************************************************************************//
     /**
      * Este botón recoge los datos que hayamos introducido en el formulario de
-     * registro, comprobando:
-     * 1. Que se corresponden con los patrones establecidos.
-     * 2. Que el correo no está registrado en la base de datos.
-     * 3. Que las contraseñas coinciden.
-     * Una vez hecha la comprobación, se introducen los datos en la base de
-     * datos.
+     * registro, comprobando: 1. Que se corresponden con los patrones
+     * establecidos. 2. Que el correo no está registrado en la base de datos. 3.
+     * Que las contraseñas coinciden. Una vez hecha la comprobación, se
+     * introducen los datos en la base de datos.
      */
     if (request.getParameter("aceptarRegistro") != null) {
         String email = request.getParameter("email");
@@ -85,7 +83,7 @@
         session.invalidate();
         response.sendRedirect("../index.jsp");
     }
-    
+
     //************************************************************************//
     //*************************** Seleccionar rol ****************************//
     //************************************************************************//
@@ -94,24 +92,22 @@
      * seleccionaremos el rol con el que queremos trabajar. Dependiendo del que
      * elijamos, nos llevará a una paǵina o a otra pulsando el botón Entrar.
      */
-    if (request.getParameter("aceptarRol") != null) {
-        if (request.getParameter("seleRol").equals("prof")) {
-            ConexionEstatica.nueva();
-            ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
-            ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
-            ConexionEstatica.cerrarBD();
-            session.setAttribute("listaAulas", lisAulas);
-            session.setAttribute("listaFranjas", lisFranjas);
-            response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
-        }
-        if (request.getParameter("seleRol").equals("adminAula")) {
-            response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
-        }
-        if (request.getParameter("seleRol").equals("adminGen")) {
-            response.sendRedirect("../Vistas/AdminGeneral/menuAdminGeneral.jsp");
-        }
+    if (request.getParameter("prof") != null) {
+        ConexionEstatica.nueva();
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        ConexionEstatica.cerrarBD();
+        session.setAttribute("listaAulas", lisAulas);
+        session.setAttribute("listaFranjas", lisFranjas);
+        response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
     }
-    
+    if (request.getParameter("adminAula") != null) {
+        response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
+    }
+    if (request.getParameter("adminGen") != null) {
+        response.sendRedirect("../Vistas/AdminGeneral/menuAdminGeneral.jsp");
+    }
+
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

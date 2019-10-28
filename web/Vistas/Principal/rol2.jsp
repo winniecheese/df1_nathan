@@ -13,15 +13,19 @@
         <title>Desafío nº1</title>
     </head>
     <body>
-        
+        <header>
+            <h3>
+                <%
+                    Usuario u = (Usuario) session.getAttribute("userLogin");
+                    out.println("¡Bienvenidx, " + u.getApellidos() + " " + u.getNombre() + "!");
+                %>
+            </h3>
+        </header>
         <main>
             <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <select name="seleRol">
-                    <option value="sel" selected disabled>Selecciona un rol</option>
-                    <option value="prof">Profesor</option>
-                    <option value="adminAula">Administrador de aula</option>
-                </select>
-                <input type="submit" id="aceptarRol" name="aceptarRol" value="Entrar">
+                <h3>Entrar como:</h3>
+                <input type="submit" id="prof" name="prof" value="Profesor">
+                <input type="submit" id="adminAula" name="adminAula" value="Administrador de aula">
             </form>
         </main>
         <footer>
