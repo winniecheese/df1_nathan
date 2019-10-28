@@ -58,7 +58,7 @@
     if (request.getParameter("botonCRUDaulas") != null) {
         if (request.getParameter("botonCRUDaulas").equals("Eliminar")) {
             ConexionEstatica.nueva();
-            String codAula = request.getParameter("codAula");
+            int codAula = Integer.parseInt(request.getParameter("codAula"));
             ConexionEstatica.Borrar_Aula(codAula);
             ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
             session.setAttribute("listaAulas", lisAulas);
@@ -84,6 +84,45 @@
      * Estos botones nos permiten modificar datos de las franjas horarias o
      * eliminarlas desde el CRUD de franjas horarias.
      */
+    if (request.getParameter("botonCRUDfranjas") != null) {
+        if (request.getParameter("botonCRUDfranjas").equals("Eliminar")) {
+            ConexionEstatica.nueva();
+            int codFranja = Integer.parseInt(request.getParameter("codFranja"));
+            ConexionEstatica.Borrar_Franja(codFranja);
+            ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+            session.setAttribute("listaFranjas", lisFranjas);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+        }
+        if (request.getParameter("botonCRUDfranjas").equals("Modificar")) {
+            ConexionEstatica.nueva();
+            int codFranja = Integer.parseInt(request.getParameter("codFranja"));
+            String horaEmpieza = request.getParameter("horaEmpieza");
+            String horaTermina = request.getParameter("horaTermina");
+            ConexionEstatica.Update_Franja(codFranja, horaEmpieza, horaTermina);
+            ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+            session.setAttribute("listaFranjas", lisFranjas);
+            ConexionEstatica.cerrarBD();
+            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+        }
+    }
+    
+    //************************************************************************//
+    //***************************** Añadir aula ******************************//
+    //************************************************************************//
+    /**
+     * Este botón nos permite añadir una nueva aula, introduciendo los valores
+     * desde el CRUD de aulas.
+     */
+    
+    //************************************************************************//
+    //************************* Añadir franja horaria *************************//
+    //************************************************************************//
+    /**
+     * Este botón nos permite añadir una nueva franja horaria, introduciendo los
+     * valores desde el CRUD de franjas horarias.
+     */
+    
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

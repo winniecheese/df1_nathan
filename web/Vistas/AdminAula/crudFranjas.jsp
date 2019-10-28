@@ -57,11 +57,11 @@
                     Franja fran = lisFranjas.get(i);
             %>
             <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>">
+                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
                 <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
                 <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
-                <input type="submit" id="eliminar" name="eliminar" value="Eliminar">
-                <input type="submit" id="modificar" name="modificar" value="Modificar">
+                <input type="submit" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
+                <input type="submit" id="modificar" name="botonCRUDfranjas" value="Modificar">
             </form>
             <%
                 }

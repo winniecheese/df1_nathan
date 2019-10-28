@@ -12,8 +12,8 @@ package Auxiliar;
 public class Constantes {
 
     public static String BBDD = "df1_nathan";
-    public static String usuario = "nathan";
-    public static String password = "Chubaca2019";
+    public static String usuario = "root";
+    public static String password = "";
     public static String ficheroBitacora = "bitacora.txt";
 //    public static String tabla1 = "Usuarios";
 //    public static String tabla2 = "Roles";

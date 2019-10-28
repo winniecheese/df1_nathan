@@ -108,49 +108,75 @@ public class ConexionEstatica {
         }
         return personos;
     }*/
-    //----------------------------------------------------------
-    public static void Borrar_Rol(int cod_user, int cod_rol) throws SQLException {
-        String Sentencia = "DELETE FROM asignar_rol WHERE cod_user = '" + cod_user + "' AND cod_rol = '" + cod_rol + "'";
-        Sentencia_SQL.executeUpdate(Sentencia);
-    }
-
-    //----------------------------------------------------------
+    //************************************************************************//
+    //************************ MÉTODOS PARA USUARIOS *************************//
+    //************************************************************************//
+    //------------------------------------------------------------------------//
     public static void Insertar_Usuario(String nombre, String apellidos, String email, String password) throws SQLException {
         String Sentencia = "INSERT INTO usuarios VALUES (0,'" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
-    
-    //----------------------------------------------------------
+
+    //------------------------------------------------------------------------//
     public static void Update_Usuario(String nombre, String apellidos, String email) throws SQLException {
         String Sentencia = "UPDATE usuarios SET nombre = '" + nombre + "', apellidos = '" + apellidos + "' WHERE email = '" + email + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
-    //----------------------------------------------------------
+    //------------------------------------------------------------------------//
+    public static void Borrar_Usuario(String email) throws SQLException {
+        String Sentencia = "DELETE FROM usuarios WHERE email = '" + email + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+
+    //************************************************************************//
+    //************************** MÉTODOS PARA ROLES **************************//
+    //************************************************************************//
+    //------------------------------------------------------------------------//
     public static void Insertar_Rol(int cod_user, int cod_rol) throws SQLException {
         String Sentencia = "INSERT INTO asignar_rol VALUES ('" + cod_user + "','" + cod_rol + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
-    //----------------------------------------------------------
-    public static void Borrar_Usuario(String email) throws SQLException {
-        String Sentencia = "DELETE FROM usuarios WHERE email = '" + email + "'";
+    //------------------------------------------------------------------------//
+    public static void Borrar_Rol(int cod_user, int cod_rol) throws SQLException {
+        String Sentencia = "DELETE FROM asignar_rol WHERE cod_user = '" + cod_user + "' AND cod_rol = '" + cod_rol + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
-    
-    //----------------------------------------------------------
-    public static void Borrar_Aula(String codAula) throws SQLException {
-        String Sentencia = "DELETE FROM aulas WHERE cod_aula = '" + codAula + "'";
-        Sentencia_SQL.executeUpdate(Sentencia);
-    }
-    
-    //----------------------------------------------------------
+
+    //************************************************************************//
+    //************************** MÉTODOS PARA AULAS **************************//
+    //************************************************************************//
+    //------------------------------------------------------------------------//
     public static void Update_Aula(int codAula, String nombreAula) throws SQLException {
         String Sentencia = "UPDATE aulas SET descripcion = '" + nombreAula + "' WHERE cod_aula = '" + codAula + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
+    //------------------------------------------------------------------------//
+    public static void Borrar_Aula(int codAula) throws SQLException {
+        String Sentencia = "DELETE FROM aulas WHERE cod_aula = '" + codAula + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
 
+    //************************************************************************//
+    //************************* MÉTODOS PARA FRANJAS *************************//
+    //************************************************************************//
+    //------------------------------------------------------------------------//
+    public static void Update_Franja(int codFranja, String horaEmpieza, String horaTermina) throws SQLException {
+        String Sentencia = "UPDATE franja_horaria SET hora_empieza = '" + horaEmpieza + "', hora_termina = '" + horaTermina + "' WHERE cod_franja = '" + codFranja + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+
+    //------------------------------------------------------------------------//
+    public static void Borrar_Franja(int codFranja) throws SQLException {
+        String Sentencia = "DELETE FROM franja_horaria WHERE cod_franja = '" + codFranja + "'";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
+
+    //************************************************************************//
+    //************************* MÉTODOS PARA LISTAS **************************//
+    //************************************************************************//
     public static ListaAulas obtenerAulas() {
         ListaAulas lis = new ListaAulas();
         Aula a = null;
@@ -165,7 +191,8 @@ public class ConexionEstatica {
         }
         return lis;
     }
-    
+
+    //------------------------------------------------------------------------//
     public static ListaFranjas obtenerFranjas() {
         ListaFranjas lis = new ListaFranjas();
         Franja f = null;
