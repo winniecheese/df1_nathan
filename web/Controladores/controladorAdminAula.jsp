@@ -63,7 +63,13 @@
             ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
             session.setAttribute("listaAulas", lisAulas);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+            int n = (Integer) session.getAttribute("rol");
+            if (n == 2) {
+                response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+            }
+            if (n == 3) {
+                response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
+            }
         }
         if (request.getParameter("botonCRUDaulas").equals("Modificar")) {
             ConexionEstatica.nueva();
@@ -73,7 +79,13 @@
             ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
             session.setAttribute("listaAulas", lisAulas);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+            int n = (Integer) session.getAttribute("rol");
+            if (n == 2) {
+                response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+            }
+            if (n == 3) {
+                response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
+            }
         }
     }
 
@@ -92,7 +104,13 @@
             ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
             session.setAttribute("listaFranjas", lisFranjas);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+            int n = (Integer) session.getAttribute("rol");
+            if (n == 2) {
+                response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+            }
+            if (n == 3) {
+                response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
+            }
         }
         if (request.getParameter("botonCRUDfranjas").equals("Modificar")) {
             ConexionEstatica.nueva();
@@ -103,7 +121,13 @@
             ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
             session.setAttribute("listaFranjas", lisFranjas);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+            int n = (Integer) session.getAttribute("rol");
+            if (n == 2) {
+                response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+            }
+            if (n == 3) {
+                response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
+            }
         }
     }
 
@@ -122,7 +146,13 @@
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         session.setAttribute("listaAulas", lisAulas);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+        int n = (Integer) session.getAttribute("rol");
+        if (n == 2) {
+            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
+        }
+        if (n == 3) {
+            response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
+        }
     }
 
     //************************************************************************//
@@ -140,9 +170,15 @@
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         session.setAttribute("listaFranjas", lisFranjas);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+        int n = (Integer) session.getAttribute("rol");
+        if (n == 2) {
+            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
+        }
+        if (n == 3) {
+            response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
+        }
     }
-    
+
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

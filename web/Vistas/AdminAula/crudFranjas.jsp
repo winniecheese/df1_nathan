@@ -41,7 +41,7 @@
             </form>
         </header>
         <main>
-            <h3>Lista de aulas</h3>
+            <h3>Lista de franjas horarias</h3>
             <table>
                 <thead>
                     <tr>

@@ -42,7 +42,7 @@
             </form>
         </header>
         <main>
-            <h3>Lista de aulas</h3>
+            <h3>Lista de franjas horarias</h3>
             <table>
                 <thead>
                     <tr>
@@ -58,21 +58,21 @@
                 for (int i = 0; i < lisFranjas.size(); i++) {
                     Franja fran = lisFranjas.get(i);
             %>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>">
+            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
                 <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
                 <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
-                <input type="submit" id="eliminarFranja" name="eliminarFranja" value="Eliminar">
-                <input type="submit" id="modificarFranja" name="modificarFranja" value="Modificar">
+                <input type="submit" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
+                <input type="submit" id="modificar" name="botonCRUDfranjas" value="Modificar">
             </form>
             <%
                 }
             %>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="text" id="newCod" name="newCod" value="">
+            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                <input type="text" id="newCod" name="newCod" value="" placeholder="Este campo se rellena solo" readonly="">
                 <input type="text" id="newHoraEmp" name="newHoraEmp" value="">
                 <input type="text" id="newHoraTer" name="newHoraTer" value="">
-                <input type="submit" id="aniadirFranja" name="aniadirFranja" value="Añadir">
+                <input type="submit" id="aniadir" name="aniadirFranja" value="Añadir">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">
