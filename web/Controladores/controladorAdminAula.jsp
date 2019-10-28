@@ -26,12 +26,12 @@
     /**
      * Este botón nos lleva al CRUD de gestión de aulas.
      */
-    if (request.getParameter("gestAulas") != null) {
+    if (request.getParameter("gestAulas1") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         session.setAttribute("listaAulas", lisAulas);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/crudAulas.jsp");
+        response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
     }
     
     //************************************************************************//
@@ -40,12 +40,12 @@
     /**
      * Este botón nos lleva al CRUD de gestión de franjas horarias.
      */
-    if (request.getParameter("gestFranjas") != null) {
+    if (request.getParameter("gestFranjas1") != null) {
         ConexionEstatica.nueva();
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         session.setAttribute("listaFranjas", lisFranjas);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/crudFranjas.jsp");
+        response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
     }
     
     //************************************************************************//

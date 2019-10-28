@@ -88,10 +88,11 @@
     //*************************** Seleccionar rol ****************************//
     //************************************************************************//
     /**
-     * Una vez hayamos iniciado sesión, se iniciará una página en la que
-     * seleccionaremos el rol con el que queremos trabajar. Dependiendo del que
-     * elijamos, nos llevará a una paǵina o a otra pulsando el botón Entrar.
+     * Dependiendo del rol que tengamos, nos llevará a una página o a otra para
+     * seleccionar el rol con el que queremos entrar. Esto dependerá de los
+     * permisos que tengamos.
      */
+    //********************* Rol de administrador de aula *********************//
     if (request.getParameter("prof1") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
@@ -103,6 +104,20 @@
     }
     if (request.getParameter("adminAula1") != null) {
         response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
+    }
+
+    //********************* Rol de administrador general *********************//
+    if (request.getParameter("prof2") != null) {
+        ConexionEstatica.nueva();
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        ConexionEstatica.cerrarBD();
+        session.setAttribute("listaAulas", lisAulas);
+        session.setAttribute("listaFranjas", lisFranjas);
+        response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
+    }
+    if (request.getParameter("adminAula2") != null) {
+        response.sendRedirect("../Vistas/AdminGeneral/menuAdminAula2.jsp");
     }
     if (request.getParameter("adminGen") != null) {
         response.sendRedirect("../Vistas/AdminGeneral/menuAdminGeneral.jsp");
