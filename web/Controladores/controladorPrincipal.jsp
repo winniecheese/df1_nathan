@@ -36,7 +36,7 @@
                 ConexionEstatica.cerrarBD();
                 session.setAttribute("listaAulas", lisAulas);
                 session.setAttribute("listaFranjas", lisFranjas);
-                response.sendRedirect("../Vistas/Profesor/panelReservas2.jsp");
+                response.sendRedirect("../Vistas/Profesor/panelReservasProfesor.jsp");
             }
             if (n == 2) {
                 response.sendRedirect("../Vistas/Principal/rol2.jsp");
@@ -92,16 +92,16 @@
      * seleccionaremos el rol con el que queremos trabajar. Dependiendo del que
      * elijamos, nos llevará a una paǵina o a otra pulsando el botón Entrar.
      */
-    if (request.getParameter("prof") != null) {
+    if (request.getParameter("prof1") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         ConexionEstatica.cerrarBD();
         session.setAttribute("listaAulas", lisAulas);
         session.setAttribute("listaFranjas", lisFranjas);
-        response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
+        response.sendRedirect("../Vistas/AdminAula/panelReservasAdminAula.jsp");
     }
-    if (request.getParameter("adminAula") != null) {
+    if (request.getParameter("adminAula1") != null) {
         response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
     }
     if (request.getParameter("adminGen") != null) {

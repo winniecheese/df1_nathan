@@ -1,13 +1,7 @@
 <%-- 
-    Document   : panelReservas2
-    Created on : 28-oct-2019, 11:03:15
+    Document   : panelReservas
+    Created on : 22-oct-2019, 9:57:04
     Author     : Nathan
---%>
-
-<%--
-    Esta página es el segundo panel de reservas. A diferencia de la número 1,
-    esta no tiene un botón de Volver, ya que quien accede aquí es únicamente
-    profesor y no tiene más opciones.
 --%>
 
 <%@page import="Modelo.*"%>
@@ -18,6 +12,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
     </head>
     <body>
         <h3>Panel de reservas</h3>
@@ -75,6 +74,7 @@
         %>
         <br>
         <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+            <input type="button" name="volver" value="Volver" onclick="goBack()">
             <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
         </form>
     </form>
