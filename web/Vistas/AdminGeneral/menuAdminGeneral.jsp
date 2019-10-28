@@ -4,6 +4,7 @@
     Author     : Nathan
 --%>
 
+<%@page import="Modelo.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,15 +18,41 @@
         </script>
     </head>
     <body>
-        <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
-            <input type="submit" id="gestUsuarios" name="gestUsuarios" value="Gestionar usuarios">
-            <br>
-            <br>
-            <input type="submit" id="verBitacora" name="verBitacora" value="Ver bitácora">
-            <br>
-            <br>
-            <input type="button" name="volver" value="Volver" onclick="goBack()">
-            <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
-        </form>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Forma de trabajo</a>
+                        <ul>
+                            <li><a href="panelReservasAdminGeneral.jsp">Profesor</a></li>
+                            <li><a href="menuAdminAula2.jsp">Administrador de aula</a></li>
+                            <li><a href="menuAdminGeneral.jsp">Administrador general</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <h3>Usuario: 
+                <%
+                    Usuario u = (Usuario) session.getAttribute("userLogin");
+                    out.println(u.getApellidos() + " " + u.getNombre());
+                %>
+            </h3>
+            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+            </form>
+        </header>
+        <main>
+            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                <input type="submit" id="gestUsuarios" name="gestUsuarios" value="Gestionar usuarios">
+                <br>
+                <br>
+                <input type="submit" id="verBitacora" name="verBitacora" value="Ver bitácora">
+                <br>
+                <br>
+                <input type="button" name="volver" value="Volver" onclick="goBack()">
+            </form>
+        </main>
+        <footer>
+            <address>Nathaniel Lucas Olmo</address>
+        </footer>
     </body>
 </html>

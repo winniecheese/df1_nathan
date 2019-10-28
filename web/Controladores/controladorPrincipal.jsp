@@ -92,7 +92,9 @@
      * seleccionar el rol con el que queremos entrar. Esto dependerá de los
      * permisos que tengamos.
      */
-    //********************* Rol de administrador de aula *********************//
+    //------------------------------------------------------------------------//
+    //--------------------- Rol de administrador de aula ---------------------//
+    //------------------------------------------------------------------------//
     if (request.getParameter("prof1") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
@@ -106,7 +108,9 @@
         response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
     }
 
-    //********************* Rol de administrador general *********************//
+    //------------------------------------------------------------------------//
+    //--------------------- Rol de administrador general ---------------------//
+    //------------------------------------------------------------------------//
     if (request.getParameter("prof2") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();

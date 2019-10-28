@@ -23,8 +23,9 @@
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
-                            <li><a href="../Profesor/panelReservas.jsp">Profesor</a></li>
-                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                            <li><a href="panelReservasAdminGeneral.jsp">Profesor</a></li>
+                            <li><a href="menuAdminAula2.jsp">Administrador de aula</a></li>
+                            <li><a href="menuAdminGeneral.jsp">Administrador general</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -35,25 +36,26 @@
                     out.println(u.getApellidos() + " " + u.getNombre());
                 %>
             </h3>
-            <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+            </form>
         </header>
         <main>
-            <form name="formulario" action="../Controladores/controlador.jsp" method="POST">
+            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
                 <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
                 <br>
                 <br>
-                <input type="submit" id="gestAulas" name="gestAulas" value="Gestionar aulas">
+                <input type="submit" id="gestAulas2" name="gestAulas2" value="Gestionar aulas">
                 <br>
                 <br>
-                <input type="submit" id="gestFranjas" name="gestFranjas" value="Gestionar franjas horarias">
+                <input type="submit" id="gestFranjas2" name="gestFranjas2" value="Gestionar franjas horarias">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">
-                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
             </form>
         </main>
-            <footer>
-                <address>Nathaniel Lucas Olmo</address>
-            </footer>
+        <footer>
+            <address>Nathaniel Lucas Olmo</address>
+        </footer>
     </body>
 </html>

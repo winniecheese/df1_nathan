@@ -1,6 +1,6 @@
 <%-- 
-    Document   : crudUsuarios
-    Created on : 21-oct-2019, 12:41:37
+    Document   : crudFranjas
+    Created on : 24-oct-2019, 1:12:11
     Author     : Nathan
 --%>
 
@@ -41,34 +41,37 @@
             </form>
         </header>
         <main>
+            <h3>Lista de aulas</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>e-mail</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
+                        <th>Código</th>
+                        <th>Empieza</th>
+                        <th>Termina</th>
                     </tr>
                 </thead>
             </table>
             <%
-                ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
+                ListaFranjas lisFranjas = (ListaFranjas) session.getAttribute("listaFranjas");
 
-                for (int i = 0; i < lis.size(); i++) {
-                    Usuario user = lis.get(i);
+                for (int i = 0; i < lisFranjas.size(); i++) {
+                    Franja fran = lisFranjas.get(i);
             %>
             <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="text" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
-                <input type="text" id="nombre" name="nombre" value="<%=user.getNombre()%>">
-                <input type="text" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>">
-                <input type="submit" id="eliminar" name="botonCRUDusers" value="Eliminar">
-                <input type="submit" id="modificar" name="botonCRUDusers" value="Modificar">
+                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>">
+                <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
+                <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
+                <input type="submit" id="eliminarFranja" name="eliminarFranja" value="Eliminar">
+                <input type="submit" id="modificarFranja" name="modificarFranja" value="Modificar">
             </form>
             <%
                 }
             %>
-            <br>
             <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="submit" id="aniadirUser" name="aniadirUser" value="Añadir">
+                <input type="text" id="newCod" name="newCod" value="">
+                <input type="text" id="newHoraEmp" name="newHoraEmp" value="">
+                <input type="text" id="newHoraTer" name="newHoraTer" value="">
+                <input type="submit" id="aniadirFranja" name="aniadirFranja" value="Añadir">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">

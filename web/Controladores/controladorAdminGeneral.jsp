@@ -20,9 +20,9 @@
         ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
         session.setAttribute("listaUsuarios", lisUsuarios);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/crudUsuarios.jsp");
+        response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
     }
-    
+
     //************************************************************************//
     //***************************** Ver bitácora *****************************//
     //************************************************************************//
@@ -33,7 +33,7 @@
     if (request.getParameter("verBitacora") != null) {
 
     }
-    
+
     //************************************************************************//
     //**************************** Añadir usuario ****************************//
     //************************************************************************//
@@ -43,20 +43,19 @@
      * sesión.
      */
     if (request.getParameter("aniadirUser") != null) {
-        response.sendRedirect("../Vistas/registro2.jsp");
+        response.sendRedirect("../Vistas/AdminGeneral/registro2.jsp");
     }
-    
+
     //************************************************************************//
     //************************** Aceptar el registro *************************//
     //************************************************************************//
     /**
      * Este botón recoge los datos que hayamos introducido en el formulario de
-     * registro, comprobando:
-     * 1. Que se corresponden con los patrones establecidos.
-     * 2. Que el correo no está registrado en la base de datos.
-     * 3. Que las contraseñas coinciden.
-     * Una vez hecha la comprobación, se introducen los datos en la base de
-     * datos y nos envía de nuevo al CRUD de usuarios.
+     * registro, comprobando: 1. Que se corresponden con los patrones
+     * establecidos. 2. Que el correo no está registrado en la base de datos. 3.
+     * Que las contraseñas coinciden. Una vez hecha la comprobación, se
+     * introducen los datos en la base de datos y nos envía de nuevo al CRUD de
+     * usuarios.
      */
     if (request.getParameter("aceptarRegistro2") != null) {
         String email = request.getParameter("email");
@@ -71,9 +70,9 @@
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
         }
-        response.sendRedirect("../Vistas/crudUsuarios.jsp");
+        response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
     }
-    
+
     //************************************************************************//
     //********************** Modificar o eliminar usuario ********************//
     //************************************************************************//
@@ -89,7 +88,7 @@
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/crudUsuarios.jsp");
+            response.sendRedirect("../Vistas/AdminGeneralcrudUsuarios.jsp");
         }
         if (request.getParameter("botonCRUDusers").equals("Modificar")) {
             ConexionEstatica.nueva();
@@ -100,10 +99,41 @@
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
-            response.sendRedirect("../Vistas/crudUsuarios.jsp");
+            response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
         }
     }
-    
+
+    //------------------------------------------------------------------------//
+    //-------------- Si el usuario trabaja como Admin. de Aula ---------------//
+    //------------------------------------------------------------------------//
+    //************************************************************************//
+    //*************************** Gestionar aulas ****************************//
+    //************************************************************************//
+    /**
+     * Este botón nos lleva al CRUD de gestión de aulas.
+     */
+    if (request.getParameter("gestAulas2") != null) {
+        ConexionEstatica.nueva();
+        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+        session.setAttribute("listaAulas", lisAulas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
+    }
+
+    //************************************************************************//
+    //********************** Gestionar franjas horarias **********************//
+    //************************************************************************//
+    /**
+     * Este botón nos lleva al CRUD de gestión de franjas horarias.
+     */
+    if (request.getParameter("gestFranjas2") != null) {
+        ConexionEstatica.nueva();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        session.setAttribute("listaFranjas", lisFranjas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
+    }
+
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

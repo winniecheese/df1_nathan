@@ -47,8 +47,6 @@
                         <th>Código</th>
                         <th>Empieza</th>
                         <th>Termina</th>
-                        <th></th>
-                        <th></th>
                     </tr>
                 </thead>
             </table>

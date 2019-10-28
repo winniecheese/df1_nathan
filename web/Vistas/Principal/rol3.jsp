@@ -24,9 +24,9 @@
         <main>
             <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
                 <h3>Entrar como:</h3>
-                <input type="submit" id="prof" name="prof2" value="Profesor">
-                <input type="submit" id="adminAula" name="adminAula2" value="Administrador de aula">
-                 <input type="submit" id="adminAula" name="adminGen" value="Administrador general">
+                <input type="submit" id="prof2" name="prof2" value="Profesor">
+                <input type="submit" id="adminAula2" name="adminAula2" value="Administrador de aula">
+                <input type="submit" id="adminGen" name="adminGen" value="Administrador general">
             </form>
         </main>
         <footer>

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : crudUsuarios
-    Created on : 21-oct-2019, 12:41:37
+    Document   : crudAulas
+    Created on : 24-oct-2019, 1:11:59
     Author     : Nathan
 --%>
 
@@ -41,34 +41,34 @@
             </form>
         </header>
         <main>
+            <h3>Lista de aulas</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>e-mail</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
+                        <th>Código de aula</th>
+                        <th>Descripción</th>
                     </tr>
                 </thead>
             </table>
             <%
-                ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
+                ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
 
                 for (int i = 0; i < lis.size(); i++) {
-                    Usuario user = lis.get(i);
+                    Aula aul = lis.get(i);
             %>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="text" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
-                <input type="text" id="nombre" name="nombre" value="<%=user.getNombre()%>">
-                <input type="text" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>">
-                <input type="submit" id="eliminar" name="botonCRUDusers" value="Eliminar">
-                <input type="submit" id="modificar" name="botonCRUDusers" value="Modificar">
+            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                <input type="text" id="codAula" name="codAula" value="<%=aul.getCod_aula()%>">
+                <input type="text" id="nombreAula" name="nombreAula" value="<%=aul.getDescripcion()%>">
+                <input type="submit" id="eliminar" name="eliminar" value="Eliminar">
+                <input type="submit" id="modificar" name="modificar" value="Modificar">
             </form>
             <%
                 }
             %>
-            <br>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="submit" id="aniadirUser" name="aniadirUser" value="Añadir">
+            <form name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                <input type="text" id="newCod" name="newCod" value="">
+                <input type="text" id="newDesc" name="newDesc" value="">
+                <input type="submit" id="aniadir" name="aniadir" value="Añadir">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">
