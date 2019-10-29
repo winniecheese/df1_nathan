@@ -18,12 +18,28 @@
      * reserva.
      */
     if (request.getParameter("libre") != null) {
-        int codAula = Integer.parseInt(request.getParameter("seleAula"));
+        String codAula = request.getParameter("seleAula");
         int codFranja = Integer.parseInt(request.getParameter("codFranja"));
         Usuario u = (Usuario) session.getAttribute("userLogin");
-        int codUser = Integer.parseInt(request.getParameter("seleAula"));
+        int codUser = u.getCod_user();
+        String dia = (String) request.getParameter("fecha");
+        ConexionEstatica.nueva();
+        ConexionEstatica.Insertar_Reserva(codAula, codFranja, codUser, dia);
+        ListaReservas lisReservas = ConexionEstatica.obtenerReservas(codUser);
+        session.setAttribute("listaReservas", lisReservas);
+        ConexionEstatica.cerrarBD();
+        int n = (Integer) session.getAttribute("rol");
+        if (n == 1) {
+            response.sendRedirect("../Vistas/Profesor/panelReservasProfesor.jsp");
+        }
+        if (n == 2) {
+            response.sendRedirect("../Vistas/AdminAula/panelReservasAdminAula.jsp");
+        }
+        if (n == 3) {
+            response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
+        }
     }
-    
+
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

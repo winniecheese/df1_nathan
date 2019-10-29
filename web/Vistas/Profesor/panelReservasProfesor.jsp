@@ -15,8 +15,8 @@
     </head>
     <body>
         <h3>Panel de reservas</h3>
-        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <input type="date" id="fecha" name="fecha">
+        <form name="formulario" action="../../Controladores/controladorProfesor.jsp" method="POST">
+            <input type="date" id="fecha" name="fecha" value="2019-10-31" min="2019-10-31">
             <br>
             <br>
             <select name="seleAula">
@@ -26,7 +26,7 @@
                     for (int i = 0; i < lis.size(); i++) {
                         Aula a = lis.get(i);
                 %>
-                <option value="<%=a.getCod_aula()%>"><%out.println(a.getCod_aula());%></option>
+                <option value="<%=a.getCod_aula()%>"> <% out.println(a.getCod_aula()); %> </option>
                 <%
                     }
                 %>
@@ -37,7 +37,9 @@
             <br>
             <br>
             <%
-                out.println("Aula " + request.getParameter("seleAula"));
+                String numAula = request.getParameter("seleAula");
+                session.setAttribute("aulaSelected", numAula);
+                out.println("Aula " + session.getAttribute("aulaSelected"));
             %>
             <br>
             <br>
@@ -58,10 +60,10 @@
             for (int i = 0; i < lisFran.size(); i++) {
                 Franja fran = lisFran.get(i);
         %>
-        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>">
-            <input type="text" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>">
-            <input type="text" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>">
+        <form name="formulario" action="../../Controladores/controladorProfesor.jsp" method="POST">
+            <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
+            <input type="text" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
+            <input type="text" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
             <input type="submit" id="libre" name="libre" value="Libre">
         </form>
         <%

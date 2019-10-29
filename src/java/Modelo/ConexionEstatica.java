@@ -206,7 +206,7 @@ public class ConexionEstatica {
     //************************* MÉTODOS PARA RESERVAS ************************//
     //************************************************************************//
     //------------------------------------------------------------------------//
-    public static void Insertar_Reserva(int codAula, int codFranja, int codUser, String dia) throws SQLException {
+    public static void Insertar_Reserva(String codAula, int codFranja, int codUser, String dia) throws SQLException {
         String Sentencia = "INSERT INTO reservas VALUES (0,'" + codAula + "','" + codFranja + "','" + codUser + "','" + dia + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
@@ -240,6 +240,22 @@ public class ConexionEstatica {
             while (Conj_Registros.next()) {
                 f = new Franja(Conj_Registros.getInt("cod_franja"), Conj_Registros.getString("hora_empieza"), Conj_Registros.getString("hora_termina"));
                 lis.add(f);
+            }
+        } catch (SQLException ex) {
+        }
+        return lis;
+    }
+    
+    //------------------------------------------------------------------------//
+    public static ListaReservas obtenerReservas(int codUser) {
+        ListaReservas lis = new ListaReservas();
+        Reserva r = null;
+        try {
+            String sentencia = "SELECT * FROM reservas WHERE cod_user = '" + codUser + "'";
+            ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
+            while (Conj_Registros.next()) {
+                r = new Reserva(Conj_Registros.getInt("cod_reserva"), Conj_Registros.getInt("cod_aula"), Conj_Registros.getInt("cod_franja"), Conj_Registros.getInt("cod_user"), Conj_Registros.getString("dia"));
+                lis.add(r);
             }
         } catch (SQLException ex) {
         }
