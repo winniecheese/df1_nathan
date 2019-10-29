@@ -18,7 +18,7 @@
             <h3>
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println("¡Bienvenidx, " + u.getApellidos() + " " + u.getNombre() + "!");
+                    out.println("¡Bienvenidx, " + u.getNombre() + " " + u.getApellidos() + "!");
                 %>
             </h3>
         </header>

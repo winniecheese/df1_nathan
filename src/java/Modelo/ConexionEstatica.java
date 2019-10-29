@@ -201,10 +201,20 @@ public class ConexionEstatica {
         String Sentencia = "DELETE FROM franja_horaria WHERE cod_franja = '" + codFranja + "'";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
+    
+    //************************************************************************//
+    //************************* MÉTODOS PARA RESERVAS ************************//
+    //************************************************************************//
+    //------------------------------------------------------------------------//
+    public static void Insertar_Reserva(int codAula, int codFranja, int codUser, String dia) throws SQLException {
+        String Sentencia = "INSERT INTO reservas VALUES (0,'" + codAula + "','" + codFranja + "','" + codUser + "','" + dia + "')";
+        Sentencia_SQL.executeUpdate(Sentencia);
+    }
 
     //************************************************************************//
     //************************* MÉTODOS PARA LISTAS **************************//
     //************************************************************************//
+    //------------------------------------------------------------------------//
     public static ListaAulas obtenerAulas() {
         ListaAulas lis = new ListaAulas();
         Aula a = null;

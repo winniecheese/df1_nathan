@@ -34,7 +34,7 @@
             <h3>Usuario: 
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println(u.getApellidos() + " " + u.getNombre());
+                    out.println(u.getNombre() + " " + u.getApellidos());
                 %>
             </h3>
             <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">

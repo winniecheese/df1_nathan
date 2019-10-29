@@ -59,10 +59,10 @@
                 Franja fran = lisFran.get(i);
         %>
         <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <%out.println(fran.getCod_franja());%>
-            <%out.println(fran.getHora_empieza());%>
-            <%out.println(fran.getHora_termina());%>
-            <input type="button" class="libre" name="libre" value="Libre">
+            <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>">
+            <input type="text" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>">
+            <input type="text" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>">
+            <input type="submit" id="libre" name="libre" value="Libre">
         </form>
         <%
             }
