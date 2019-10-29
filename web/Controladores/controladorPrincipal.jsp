@@ -26,16 +26,16 @@
         Usuario u = ConexionEstatica.existeUsuario(email, codClave);
         ConexionEstatica.cerrarBD();
         if (u != null) {
+            ConexionEstatica.nueva();
             int n = u.getRol();
             session.setAttribute("userLogin", u);
             session.setAttribute("rol", n);
+            ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
+            ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+            session.setAttribute("listaAulas", lisAulas);
+            session.setAttribute("listaFranjas", lisFranjas);
+            ConexionEstatica.cerrarBD();
             if (n == 1) {
-                ConexionEstatica.nueva();
-                ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
-                ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
-                ConexionEstatica.cerrarBD();
-                session.setAttribute("listaAulas", lisAulas);
-                session.setAttribute("listaFranjas", lisFranjas);
                 response.sendRedirect("../Vistas/Profesor/panelReservasProfesor.jsp");
             }
             if (n == 2) {
@@ -54,10 +54,12 @@
     //************************************************************************//
     /**
      * Este botón recoge los datos que hayamos introducido en el formulario de
-     * registro, comprobando: 1. Que se corresponden con los patrones
-     * establecidos. 2. Que el correo no está registrado en la base de datos. 3.
-     * Que las contraseñas coinciden. Una vez hecha la comprobación, se
-     * introducen los datos en la base de datos.
+     * registro, comprobando:
+     * 1. Que se corresponden con los patrones establecidos.
+     * 2. Que el correo no está registrado en la base de datos.
+     * 3. Que las contraseñas coinciden.
+     * Una vez hecha la comprobación, se introducen los datos en la base de
+     * datos.
      */
     if (request.getParameter("aceptarRegistro") != null) {
         String email = request.getParameter("email");

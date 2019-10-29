@@ -51,11 +51,12 @@
     //************************************************************************//
     /**
      * Este botón recoge los datos que hayamos introducido en el formulario de
-     * registro, comprobando: 1. Que se corresponden con los patrones
-     * establecidos. 2. Que el correo no está registrado en la base de datos. 3.
-     * Que las contraseñas coinciden. Una vez hecha la comprobación, se
-     * introducen los datos en la base de datos y nos envía de nuevo al CRUD de
-     * usuarios.
+     * registro, comprobando:
+     * 1. Que se corresponden con los patrones establecidos.
+     * 2. Que el correo no está registrado en la base de datos.
+     * 3. Que las contraseñas coinciden.
+     * Una vez hecha la comprobación, se introducen los datos en la base de
+     * datos y nos envía de nuevo al CRUD de usuarios.
      */
     if (request.getParameter("aceptarRegistro2") != null) {
         String email = request.getParameter("email");
