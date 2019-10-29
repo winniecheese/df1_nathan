@@ -60,8 +60,8 @@
             <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
                 <input type="text" id="codAula" name="codAula" value="<%=aul.getCod_aula()%>">
                 <input type="text" id="nombreAula" name="nombreAula" value="<%=aul.getDescripcion()%>">
-                <input type="submit" id="eliminar" name="eliminar" value="Eliminar">
-                <input type="submit" id="modificar" name="modificar" value="Modificar">
+                <input type="submit" id="eliminar" name="botonCRUDaulas" value="Eliminar">
+                <input type="submit" id="modificar" name="botonCRUDaulas" value="Modificar">
             </form>
             <%
                 }
@@ -69,7 +69,7 @@
             <form name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
                 <input type="text" id="newCod" name="newCod" value="">
                 <input type="text" id="newDesc" name="newDesc" value="">
-                <input type="submit" id="aniadir" name="aniadir" value="Añadir">
+                <input type="submit" id="aniadir" name="aniadirAula" value="Añadir">
                 <br>
                 <br>
                 <input type="button" name="volver" value="Volver" onclick="goBack()">

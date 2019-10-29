@@ -92,15 +92,44 @@
         }
         if (request.getParameter("botonCRUDusers").equals("Modificar")) {
             ConexionEstatica.nueva();
+            int sele = Integer.parseInt(request.getParameter("sele"));
             String email = request.getParameter("email");
-            String nombre = request.getParameter("nombre");
-            String apellidos = request.getParameter("apellidos");
-            ConexionEstatica.Update_Usuario(nombre, apellidos, email);
+            ConexionEstatica.Update_Rol(sele, email);
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
             ConexionEstatica.cerrarBD();
             response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
         }
+    }
+
+    //************************************************************************//
+    //********************** Activar o desactivar usuario ********************//
+    //************************************************************************//
+    /**
+     * Estos botones nos permiten activar o desactivar a un usuario desde el
+     * CRUD de usuarios.
+     */
+    if (request.getParameter("activo") != null) {
+        ConexionEstatica.nueva();
+        String email = request.getParameter("email");
+        int activo = 0;
+        ConexionEstatica.Activar_Desactivar_Usuario(email, activo);
+        ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+        session.setAttribute("listaUsuarios", lisUsuarios);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
+    }
+
+    //------------------------------------------------------------------------//
+    if (request.getParameter("inactivo") != null) {
+        ConexionEstatica.nueva();
+        String email = request.getParameter("email");
+        int activo = 1;
+        ConexionEstatica.Activar_Desactivar_Usuario(email, activo);
+        ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
+        session.setAttribute("listaUsuarios", lisUsuarios);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
     }
 
     //------------------------------------------------------------------------//

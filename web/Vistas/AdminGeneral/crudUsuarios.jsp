@@ -34,7 +34,7 @@
             <h3>Usuario: 
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println(u.getApellidos() + " " + u.getNombre());
+                    out.println(u.getNombre() + " " + u.getApellidos());
                 %>
             </h3>
             <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
@@ -61,11 +61,26 @@
                 <input type="text" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
                 <input type="text" id="nombre" name="nombre" value="<%=user.getNombre()%>">
                 <input type="text" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>">
+                <select name="sele">
+                    <option value="1" <% if (user.getRol() == 1) { %>selected<% } %>>Profesor</option>
+                    <option value="2" <% if (user.getRol() == 2) { %>selected<% } %>>Administrador de aula</option>
+                    <option value="3" <% if (user.getRol() == 3) { %>selected<% } %>>Administrador general</option>
+                </select>
+                <%
+                    if (user.isActivo() == true) {
+                %>
+                <input type="submit" id="activo" name="activo" value="Activo">
+                <%
+                } else {
+                %>
+                <input type="submit" id="inactivo" name="inactivo" value="Inactivo">
+                <%
+                    }
+                %>
                 <input type="submit" id="eliminar" name="botonCRUDusers" value="Eliminar">
                 <input type="submit" id="modificar" name="botonCRUDusers" value="Modificar">
             </form>
-            <%
-                }
+            <%                }
             %>
             <br>
             <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">

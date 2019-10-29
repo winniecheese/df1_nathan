@@ -23,6 +23,7 @@ public class Usuario {
     private int rol;
     private String email;
     private String password;
+    private boolean activo;
     
     //************************************************************************//
     //*****************************Constructores******************************//
@@ -35,6 +36,16 @@ public class Usuario {
         this.rol = rol;
         this.email = email;
         this.password = password;
+    }
+
+    public Usuario(int cod_user, String nombre, String apellidos, int rol, String email, String password, boolean activo) {
+        this.cod_user = cod_user;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.rol = rol;
+        this.email = email;
+        this.password = password;
+        this.activo = activo;
     }
     
     public Usuario() {
@@ -101,6 +112,14 @@ public class Usuario {
         this.password = password;
     }
 
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    
     //************************************************************************//
     //********************************Métodos*********************************//
     //************************************************************************//
