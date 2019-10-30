@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-menuAdminAula.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -35,7 +36,7 @@
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
                     out.println(u.getNombre() + " " + u.getApellidos() + ":");
-                %>administrador general
+                %>administrador de aula
             </h3>
             <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
                 <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
@@ -43,17 +44,11 @@
             </form>
         </header>
         <main>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+            <form id="formulario" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
                 <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
-                <br>
-                <br>
-                <input type="submit" id="gestAulas2" name="gestAulas2" value="Gestionar aulas">
-                <br>
-                <br>
-                <input type="submit" id="gestFranjas2" name="gestFranjas2" value="Gestionar franjas horarias">
-                <br>
-                <br>
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
+                <input type="submit" id="gestAulas" name="gestAulas2" value="Gestionar aulas">
+                <input type="submit" id="gestFranjas" name="gestFranjas2" value="Gestionar franjas horarias">
+                <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
             </form>
         </main>
         <footer>
