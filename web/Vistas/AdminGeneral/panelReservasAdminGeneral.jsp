@@ -82,11 +82,11 @@
                         Franja fran = lisFran.get(i);
                 %>
                 <div id="panelReservas2">
-                    <form id="formulario2" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                    <form id="formulario2" name="formulario" action="../../Controladores/controladorProfesor.jsp" method="POST">
                         <input type="text" class="formPanel" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
                         <input type="text" class="formPanel" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
                         <input type="text" class="formPanel" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
-                        <input type="button" class="formPanel" id="libre" name="libre" value="Libre">
+                        <input type="submit" class="formPanel" id="libre" name="libre" value="Libre">
                     </form>
                     <%
                         }
