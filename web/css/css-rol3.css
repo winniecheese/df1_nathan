@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30-oct-2019, 10:56:39
+    Author     : Nathan
+*/
+
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: #C8E9FF;
+}
+
+header {
+    margin: 10px;
+    text-align: center;
+    background-color: #81B3D5;
+    padding: 10px;
+    margin: 0px;
+    color: #003B64;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    background-color: #81B3D5;
+    color: #003B64;
+}
+
+#formulario {
+    border: 1px solid #003B64;
+    width: 300px;
+    background-color: #81B3D5;
+    margin: 50px auto 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#entrarComo {
+    text-align: center;
+    margin-top: 40px;
+    color: #003B64;
+    font-size: 13pt;
+}
+
+#prof, #adminAula, #adminGen {
+    width: 170px;
+    border: 2px solid #091A32;
+    border-radius: 7px;
+    background-color: #1E4E8E;
+    height: 30px;
+    cursor: pointer;
+    color: #CBE1FF;
+    font-weight: bold;
+}
+
+#prof:hover, #adminAula:hover, #adminGen:hover {
+    background-color: #0F3568;
+}
+
+#prof {
+    margin: 20px auto 5px;
+}
+
+#adminAula {
+    margin: 5px auto 5px;
+}
+
+#adminGen {
+    margin: 5px auto 40px;
+}
