@@ -15,6 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-registro2.css">
         <script>
@@ -36,15 +37,15 @@
                     </li>
                 </ul>
             </nav>
-            <h3 id="titulo">Usuario: 
+            <h3 id="titulo">
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println(u.getNombre() + " " + u.getApellidos());
-                %>
+                    out.println(u.getNombre() + " " + u.getApellidos() + ":");
+                %>administrador general
             </h3>
             <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <input type="submit" id="editarPerfil" name="editarPerfil" value="Editar perfil">
-                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
+                <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
             </form>
         </header>
         <main>

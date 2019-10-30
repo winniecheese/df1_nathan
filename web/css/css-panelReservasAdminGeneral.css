@@ -4,7 +4,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 30-oct-2019, 11:02:39
+    Created on : 30-oct-2019, 19:03:06
     Author     : Nathan
 */
 
@@ -137,45 +137,94 @@ main h3 {
     color: #003B64;
 }
 
-#formulario {
+#panelReservas {
     border: 1px solid #003B64;
-    width: 300px;
     background-color: #81B3D5;
+    width: 500px;
     margin: 50px auto 0px;
+}
+
+#formulario1 {
     display: flex;
     flex-direction: column;
 }
 
-.registro {
-    width: 200px;
+#fecha {
+    margin: 40px auto 10px;
+    width: 130px;
     height: 25px;
-    margin: 10px auto 10px;
     background-color: #D5DBDF;
     border: 1px solid #003B64;
     padding-left: 10px;
 }
 
-#email {
-    margin: 40px auto 10px;
+#seleAula {
+    margin: 10px auto 10px;
+    width: 70px;
+    height: 25px;
+    background-color: #D5DBDF;
+    border: 1px solid #003B64;
+    padding-left: 10px;
 }
 
-#password2 {
-    margin: 10px auto 40px;
-}
-
-#aceptar {
-    width: 110px;
-    margin: 0px auto 40px;
-    border: 2px solid #4DD52F;
-    border-radius: 7px;
-    background-color: #BAFFAB;
+#verCuadrante {
+    margin: 10px auto 10px;
+    width: 130px;
     height: 30px;
+    border: 2px solid #D9D231;
+    border-radius: 7px;
+    background-color: #FFFFA9;
     cursor: pointer;
-    color: #167B00;
+    color: #9F9F00;
     font-weight: bold;
 }
 
-#aceptar:hover {
+#verCuadrante:hover {
+    background-color: #FFFF5F;
+}
+
+#aulaSelected {
+    margin: 10px auto 40px;
+}
+
+#tabla {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    font-size: 11pt;
+}
+
+#formulario2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#panelReservas2 {
+    margin: 0px 0px 40px;
+}
+
+.formPanel {
+    width: 90px;
+    height: 20px;
+    margin: 5px 0px;
+    background-color: #D5DBDF;
+    border: 1px solid #003B64;
+    padding-left: 10px;
+}
+
+#libre {
+    width: 110px;
+    border: 2px solid #4DD52F;
+    border-radius: 7px;
+    background-color: #BAFFAB;
+    color: #167B00;
+    font-weight: bold;
+    height: 24px;
+    cursor: pointer;
+    padding: 0px;
+}
+
+#libre:hover {
     background-color: #74F259;
 }
 
@@ -192,8 +241,4 @@ main h3 {
 
 #volver:hover {
     background-color: #E62525;
-}
-
-::placeholder {
-    color: #003B64;
 }

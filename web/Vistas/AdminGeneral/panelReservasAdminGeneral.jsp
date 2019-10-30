@@ -10,8 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-panelReservasAdminGeneral.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="menuV">
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
@@ -31,74 +31,68 @@
                     </li>
                 </ul>
             </nav>
-            <h3>Usuario: 
+            <h3 id="titulo">
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println(u.getNombre() + " " + u.getApellidos());
-                %>
+                    out.println(u.getNombre() + " " + u.getApellidos() + ":");
+                %>administrador general
             </h3>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+            <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
+                <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
             </form>
         </header>
         <main>
             <h3>Panel de reservas</h3>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <input type="date" id="fecha" name="fecha">
-                <br>
-                <br>
-                <select name="seleAula">
-                    <%
-                        ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
+            <div id="panelReservas">
+                <form id="formulario1" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                    <input type="date" id="fecha" name="fecha" value="2019-10-31" min="2019-10-31">
+                    <select id="seleAula" name="seleAula">
+                        <%
+                            ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
 
-                        for (int i = 0; i < lis.size(); i++) {
-                            Aula a = lis.get(i);
-                    %>
-                    <option value="<%=a.getCod_aula()%>"><%out.println(a.getCod_aula());%></option>
+                            for (int i = 0; i < lis.size(); i++) {
+                                Aula a = lis.get(i);
+                        %>
+                        <option value="<%=a.getCod_aula()%>"><%out.println(a.getCod_aula());%></option>
+                        <%
+                            }
+                        %>
+                    </select>
+                    <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
+                    <p id="aulaSelected"><%
+                        out.println("Aula " + request.getParameter("seleAula"));
+                        %></p>
+                    <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                </form>
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th>Código de franja</th>
+                            <th>Empieza</th>
+                            <th>Termina</th>
+                            <th>Reservado</th>
+                        </tr>
+                    </thead>
+                </table>
+                <%
+                    ListaFranjas lisFran = (ListaFranjas) session.getAttribute("listaFranjas");
+
+                    for (int i = 0; i < lisFran.size(); i++) {
+                        Franja fran = lisFran.get(i);
+                %>
+                <div id="panelReservas2">
+                    <form id="formulario2" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                        <input type="text" class="formPanel" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
+                        <input type="text" class="formPanel" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
+                        <input type="text" class="formPanel" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
+                        <input type="button" class="formPanel" id="libre" name="libre" value="Libre">
+                    </form>
                     <%
                         }
                     %>
-                </select>
-                <br>
-                <br>
-                <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
-                <br>
-                <br>
-                <%
-                    out.println("Aula " + request.getParameter("seleAula"));
-                %>
-                <br>
-                <br>
-            </form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código de franja</th>
-                        <th>Empieza</th>
-                        <th>Termina</th>
-                        <th>Reservado</th>
-                    </tr>
-                </thead>
-            </table>
-            <%
-                ListaFranjas lisFran = (ListaFranjas) session.getAttribute("listaFranjas");
-
-                for (int i = 0; i < lisFran.size(); i++) {
-                    Franja fran = lisFran.get(i);
-            %>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <%out.println(fran.getCod_franja());%>
-                <%out.println(fran.getHora_empieza());%>
-                <%out.println(fran.getHora_termina());%>
-                <input type="button" class="libre" name="libre" value="Libre">
-            </form>
-            <%
-                }
-            %>
-            <br>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
-            </form>
+                </div>
+            </div>
         </main>
         <footer>
             <address>Nathaniel Lucas Olmo</address>

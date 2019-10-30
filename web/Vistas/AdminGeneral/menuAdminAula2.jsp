@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="menuV">
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
@@ -31,14 +31,15 @@
                     </li>
                 </ul>
             </nav>
-            <h3>Usuario: 
+            <h3 id="titulo">
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
-                    out.println(u.getNombre() + " " + u.getApellidos());
-                %>
+                    out.println(u.getNombre() + " " + u.getApellidos() + ":");
+                %>administrador general
             </h3>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-                <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
+            <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
+                <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
             </form>
         </header>
         <main>
