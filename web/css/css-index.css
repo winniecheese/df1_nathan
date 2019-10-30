@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29-oct-2019, 20:42:49
+    Author     : Nathan
+*/
+
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: #C8E9FF;
+}
+
+header {
+    margin: 10px;
+    text-align: center;
+    background-color: #81B3D5;
+    padding: 10px;
+    margin: 0px;
+    color: #003B64;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    background-color: #81B3D5;
+    color: #003B64;
+}
+
+#formulario {
+    border: 1px solid #003B64;
+    width: 300px;
+    background-color: #81B3D5;
+    margin: 50px auto 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#email, #password {
+    width: 200px;
+    height: 25px;
+    margin: 40px auto 10px;
+    background-color: #D5DBDF;
+    border: 1px solid #003B64;
+    padding-left: 10px;
+}
+
+#password {
+    margin: 10px auto 20px;
+}
+
+#iniciarS {
+    width: 110px;
+    margin: 10px auto 0px;
+    border: 2px solid #D9D231;
+    border-radius: 7px;
+    background-color: #FFFFA9;
+    height: 30px;
+    cursor: pointer;
+    color: #9F9F00;
+    font-weight: bold;
+}
+
+#iniciarS:hover {
+    background-color: #FFFF5F;
+}
+
+#enlaceOlvPassw, #enlaceRegistro {
+    text-decoration: underline;
+    color: #003B64;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#enlaceRegistro:hover, #enlaceOlvPassw:hover {
+    color: #FFFFA9;
+}
+
+#enlaceOlvPassw {
+    font-size: 10pt;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#enlaceRegistro {
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+::placeholder {
+    color: #003B64;
+}

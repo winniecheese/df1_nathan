@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
-        <link rel="stylesheet" type="text/css" href="css/css.css">
+        <link rel="stylesheet" type="text/css" href="css/css-index.css">
         <script src="jquery-3.4.1.min.js"></script>
         <!--<script>
             $(document).ready(function () {
@@ -30,14 +30,12 @@
             <h3>Iniciar sesión</h3>
         </header>
         <main>
-            <form id="formularioLogin" name="formulario" action="Controladores/controladorPrincipal.jsp" method="POST">
+            <form id="formulario" name="formulario" action="Controladores/controladorPrincipal.jsp" method="POST">
                 <input type="text" id="email" name="email" placeholder="Escriba su e-mail...">
                 <input type="password" id="password" name="password" placeholder="Escriba su contraseña...">
                 <input type="submit" id="iniciarS" name="aceptarLogin" value="Iniciar sesión">
-                <br>
-                <a href="#" class="enlace" name="enlace" value="olvPassw">He olvidado mi contraseña</a>
-                <br>
-                <a href="Vistas/Principal/registro.jsp" class="enlace" name="enlace" value="registrar">¡Regístrate!</a>
+                <a href="#" id="enlaceOlvPassw" name="enlace" value="olvPassw">He olvidado mi contraseña</a>
+                <a href="Vistas/Principal/registro.jsp" id="enlaceRegistro" name="enlace" value="registrar">¡Regístrate!</a>
             </form>
         </main>
         <footer>

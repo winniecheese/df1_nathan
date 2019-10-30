@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-registro.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -19,30 +20,22 @@
         </script>
     </head>
     <body>
-        <h3>Registro</h3>
-        <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
-            <label for="email">e-mail: </label>
-            <input type="email" id="email" name="email">
-            <br>
-            <br>
-            <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
-            <br>
-            <br>
-            <label for="apellidos">Apellidos </label>
-            <input type="text" id="apellidos" name="apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
-            <br>
-            <br>
-            <label for="password1">Contraseña: </label>
-            <input type="password" id="password1" name="password1">
-            <br>
-            <br>
-            <label for="password2">Repite la contraseña: </label>
-            <input type="password" id="password2" name="password2">
-            <br>
-            <br>
-            <input type="submit" name="aceptarRegistro" value="Aceptar">
-            <input type="button" name="volver" value="Volver" onclick="goBack()">
-        </form>
+        <header>
+            <h3>Registro</h3>
+        </header>
+        <main>
+            <form id="formulario" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="email" id="email" class="registro" name="email" placeholder="e-mail">
+                <input type="text" id="nombre" class="registro" name="nombre" placeholder="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
+                <input type="text" id="apellidos" class="registro" name="apellidos" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
+                <input type="password" id="password1" class="registro" name="password1" placeholder="Contraseña">
+                <input type="password" id="password2" class="registro" name="password2" placeholder="Repita la contraseña">
+                <input type="submit" id="aceptar" name="aceptarRegistro" value="Crear usuario">
+                <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+            </form>
+        </main>
+        <footer>
+            <address>Nathaniel Lucas Olmo</address>
+        </footer>
     </body>
 </html>
