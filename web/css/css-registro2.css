@@ -22,9 +22,7 @@ html {
 
 header {
     margin: 10px;
-    text-align: center;
     background-color: #81B3D5;
-    padding: 10px;
     margin: 0px;
     color: #003B64;
     display: flex;
@@ -48,6 +46,57 @@ footer {
     text-align: center;
     background-color: #81B3D5;
     color: #003B64;
+}
+
+#menuV {
+    display: flex;
+    flex-direction: column;
+    background-color: #598EB1;
+    width: 200px;
+    height: 50px;
+    margin: 0px;
+}
+
+#formularioHeader {
+    width: 200px;
+}
+
+#menuV > ul {
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11pt;
+    color: floralwhite;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #2571C5;
+}
+
+nav > ul > li > ul {
+    visibility: hidden;
+    position: relative;
+    background-color: #598EB1;
+}
+
+nav > ul > li:hover ul {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+nav > ul > li > ul > li {
+    border-top: 1px solid #246CBD;
+}
+
+main h3 {
+    text-align: center;
 }
 
 #formulario {

@@ -15,7 +15,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-registro2.css">
         <script>
@@ -26,7 +25,7 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="menuV">
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
@@ -37,13 +36,14 @@
                     </li>
                 </ul>
             </nav>
-            <h3>Usuario: 
+            <h3 id="titulo">Usuario: 
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
                     out.println(u.getNombre() + " " + u.getApellidos());
                 %>
             </h3>
-            <form name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+            <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="Editar perfil">
                 <input type="submit" id="cerrarS" name="cerrarS" value="Cerrar sesión">
             </form>
         </header>
@@ -55,7 +55,7 @@
                 <input type="text" class="registro" id="apellidos" name="apellidos" placeholder="Apellidos" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{1,50}">
                 <input type="password" class="registro" id="password1" name="password1" placeholder="Contraseña">
                 <input type="password" class="registro" id="password2" name="password2" placeholder="Repita la contraseña">
-                <input type="submit" id="aceptar" name="aceptarRegistro2" value="Aceptar">
+                <input type="submit" id="aceptar" name="aceptarRegistro2" value="Crear usuario">
                 <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
             </form>
         </main>
