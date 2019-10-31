@@ -117,7 +117,7 @@ public class ConexionEstatica {
     //************************************************************************//
     //------------------------------------------------------------------------//
     public static void Insertar_Usuario(String nombre, String apellidos, String email, String password) throws SQLException {
-        String Sentencia = "INSERT INTO usuarios VALUES (0,'" + nombre + "','" + apellidos + "','" + email + "','" + password + "')";
+        String Sentencia = "INSERT INTO usuarios VALUES (0,'" + nombre + "','" + apellidos + "','" + email + "','" + password + "',0)";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 
@@ -143,8 +143,8 @@ public class ConexionEstatica {
     //************************** MÉTODOS PARA ROLES **************************//
     //************************************************************************//
     //------------------------------------------------------------------------//
-    public static void Insertar_Rol(int cod_user, int cod_rol) throws SQLException {
-        String Sentencia = "INSERT INTO asignar_rol VALUES ('" + cod_user + "','" + cod_rol + "')";
+    public static void Insertar_Rol(int cod_user) throws SQLException {
+        String Sentencia = "INSERT INTO asignar_rol VALUES ('" + cod_user + "',1)";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
     

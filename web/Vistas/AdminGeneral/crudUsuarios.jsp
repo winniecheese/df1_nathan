@@ -44,6 +44,9 @@
         </header>
         <main>
             <div id="divUsuarios">
+                <form id="formularioVolver" name="formularioVolver" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                    <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                </form>
                 <table id="tabla">
                     <thead>
                         <tr>
@@ -53,14 +56,14 @@
                         </tr>
                     </thead>
                 </table>
-                <%
-                    ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
-
-                    for (int i = 0; i < lis.size(); i++) {
-                        Usuario user = lis.get(i);
-                %>
                 <div id="divUsuarios2">
-                    <form id="formlario1" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                    <%
+                        ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
+
+                        for (int i = 0; i < lis.size(); i++) {
+                            Usuario user = lis.get(i);
+                    %>
+                    <form id="formulario1" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
                         <input type="text" class="formUsuarios" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
                         <input type="text" class="formUsuarios" id="nombre" name="nombre" value="<%=user.getNombre()%>" readonly="">
                         <input type="text" class="formUsuarios" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>" readonly="">
@@ -72,23 +75,22 @@
                         <%
                             if (user.isActivo() == true) {
                         %>
-                        <input type="submit" id="activo" name="activo" value="Activo">
+                        <input type="submit" class="boton" id="activo" name="activo" value="Activo">
                         <%
                         } else {
                         %>
-                        <input type="submit" id="inactivo" name="inactivo" value="Inactivo">
+                        <input type="submit" class="boton" id="inactivo" name="inactivo" value="Inactivo">
                         <%
                             }
                         %>
-                        <input type="submit" id="eliminar" name="botonCRUDusers" value="Eliminar">
-                        <input type="submit" id="modificar" name="botonCRUDusers" value="Modificar">
+                        <input type="submit" class="boton" id="eliminar" name="botonCRUDusers" value="Eliminar">
+                        <input type="submit" class="boton" id="modificar" name="botonCRUDusers" value="Modificar">
                     </form>
                     <%                }
                     %>
                 </div>
                 <form id="formulario2" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                    <input type="submit" id="aniadirUser" name="aniadirUser" value="Añadir">
-                    <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                    <input type="submit" class="boton" id="aniadirUser" name="aniadirUser" value="Añadir">
                 </form>
             </div>
         </main>

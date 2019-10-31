@@ -24,6 +24,11 @@ public class ListaUsuarios {
         return user;
     }
     
+    public Usuario getLast() {
+        Usuario user = Registros.getLast();
+        return user;
+    }
+    
     public int size() {
         int size = Registros.size();
         return size;
