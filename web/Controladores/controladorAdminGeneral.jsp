@@ -69,6 +69,9 @@
             ConexionEstatica.Insertar_Usuario(nombre, apellidos, email, codClave);
             ListaUsuarios lisUsuarios = ConexionEstatica.obtenerPersonas();
             session.setAttribute("listaUsuarios", lisUsuarios);
+            Usuario u = lisUsuarios.getLast();
+            int codUser = u.getCod_user();
+            ConexionEstatica.Insertar_Rol(codUser);
             ConexionEstatica.cerrarBD();
         }
         response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");

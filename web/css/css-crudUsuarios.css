@@ -1,0 +1,250 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30-oct-2019, 21:11:29
+    Author     : Nathan
+*/
+
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: #C8E9FF;
+}
+
+header {
+    margin: 10px;
+    background-color: #81B3D5;
+    margin: 0px;
+    color: #003B64;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+    background-color: #81B3D5;
+    color: #003B64;
+}
+
+#menuV {
+    display: flex;
+    flex-direction: column;
+    background-color: #003B64;
+    width: 200px;
+    height: 50px;
+    margin: 0px;
+}
+
+#titulo {
+    line-height: 50px;
+}
+
+#editarPerfil {
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    font-size: 20pt;
+    cursor: pointer;
+    border: 1px solid #003B64;
+    background-color: #317EB7;
+    color: #00233C;
+}
+
+#editarPerfil:hover {
+    background-color: #22689B;
+}
+
+#cerrarS {
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+    font-size: 20pt;
+    cursor: pointer;
+    border: 1px solid #B31010;
+    background-color: #FF3A3A;
+    color: #6D0000;
+}
+
+#cerrarS:hover {
+    background-color: #E62525;
+}
+
+#formularioHeader {
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#menuV > ul {
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 11pt;
+    color: #D6EFFF;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #005087;
+}
+
+nav > ul > li > ul {
+    visibility: hidden;
+    background-color: #003B64;
+}
+
+nav > ul > li:hover ul {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+nav > ul > li > ul > li {
+    border-top: 1px solid #246CBD;
+}
+
+#tabla {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 10px 0px;
+    font-size: 11pt;
+}
+
+.formUsuarios {
+    width: 150px;
+    height: 25px;
+    margin: 5px 0px;
+    background-color: #D5DBDF;
+    border: 1px solid #003B64;
+    padding-left: 10px;
+}
+
+.boton {
+    width: 65px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#sele {
+    height: 27px;
+}
+
+#divUsuarios {
+    border: 1px solid #003B64;
+    background-color: #81B3D5;
+    width: 900px;
+    margin: 50px auto 0px;
+}
+#divUsuarios2 {
+    margin: 10px auto;
+}
+
+#formulario1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 20px;
+}
+
+#activo {
+    border: 2px solid #4DD52F;
+    border-radius: 7px;
+    background-color: #BAFFAB;
+    color: #167B00;
+    font-weight: bold;
+}
+
+#activo:hover {
+    background-color: #74F259;
+}
+
+#inactivo {
+    border: 2px solid #CE6B19;
+    border-radius: 7px;
+    background-color: #FFC08C;
+    color: #84430E;
+    font-weight: bold;
+}
+
+#inactivo:hover {
+    background-color: #ED9C59;
+}
+
+#eliminar {
+    border: 2px solid #B31010;
+    border-radius: 7px;
+    background-color: #FF3A3A;
+    color: #6D0000;
+    font-weight: bold;
+}
+
+#eliminar:hover {
+    background-color: #E62525;
+}
+
+#modificar {
+    border: 2px solid #091A32;
+    border-radius: 7px;
+    background-color: #1E4E8E;
+    color: #CBE1FF;
+    font-weight: bold;
+}
+
+#modificar:hover {
+    background-color: #0F3568;
+}
+
+#aniadirUser {
+    margin: 10px 20px 40px;
+    border: 2px solid #4DD52F;
+    border-radius: 7px;
+    background-color: #BAFFAB;
+    color: #167B00;
+    font-weight: bold;
+}
+
+#aniadirUser:hover {
+    background-color: #74F259;
+}
+
+#volver {
+    width: 35px;
+    border: 1px solid #B31010;
+    background-color: #FF3A3A;
+    height: 30px;
+    cursor: pointer;
+    color: #6D0000;
+    font-size: 14pt;
+    position: absolute;
+}
+
+#volver:hover {
+    background-color: #E62525;
+}

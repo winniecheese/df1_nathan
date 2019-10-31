@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-menuAdminGeneral.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -43,14 +44,10 @@
             </form>
         </header>
         <main>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+            <form id="formulario" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
                 <input type="submit" id="gestUsuarios" name="gestUsuarios" value="Gestionar usuarios">
-                <br>
-                <br>
                 <input type="submit" id="verBitacora" name="verBitacora" value="Ver bitácora">
-                <br>
-                <br>
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
+                <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
             </form>
         </main>
         <footer>

@@ -10,8 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-crudUsuarios.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -43,53 +43,56 @@
             </form>
         </header>
         <main>
-            <table>
-                <thead>
-                    <tr>
-                        <th>e-mail</th>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                    </tr>
-                </thead>
-            </table>
-            <%
-                ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
+            <div id="divUsuarios">
+                <form id="formularioVolver" name="formularioVolver" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                    <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                </form>
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th>e-mail</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="divUsuarios2">
+                    <%
+                        ListaUsuarios lis = (ListaUsuarios) session.getAttribute("listaUsuarios");
 
-                for (int i = 0; i < lis.size(); i++) {
-                    Usuario user = lis.get(i);
-            %>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="text" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
-                <input type="text" id="nombre" name="nombre" value="<%=user.getNombre()%>">
-                <input type="text" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>">
-                <select name="sele">
-                    <option value="1" <% if (user.getRol() == 1) { %>selected<% } %>>Profesor</option>
-                    <option value="2" <% if (user.getRol() == 2) { %>selected<% } %>>Administrador de aula</option>
-                    <option value="3" <% if (user.getRol() == 3) { %>selected<% } %>>Administrador general</option>
-                </select>
-                <%
-                    if (user.isActivo() == true) {
-                %>
-                <input type="submit" id="activo" name="activo" value="Activo">
-                <%
-                } else {
-                %>
-                <input type="submit" id="inactivo" name="inactivo" value="Inactivo">
-                <%
-                    }
-                %>
-                <input type="submit" id="eliminar" name="botonCRUDusers" value="Eliminar">
-                <input type="submit" id="modificar" name="botonCRUDusers" value="Modificar">
-            </form>
-            <%                }
-            %>
-            <br>
-            <form name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
-                <input type="submit" id="aniadirUser" name="aniadirUser" value="Añadir">
-                <br>
-                <br>
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
-            </form>
+                        for (int i = 0; i < lis.size(); i++) {
+                            Usuario user = lis.get(i);
+                    %>
+                    <form id="formulario1" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                        <input type="text" class="formUsuarios" id="email" name="email" value="<%=user.getEmail()%>" readonly="">
+                        <input type="text" class="formUsuarios" id="nombre" name="nombre" value="<%=user.getNombre()%>" readonly="">
+                        <input type="text" class="formUsuarios" id="apellidos" name="apellidos" value="<%=user.getApellidos()%>" readonly="">
+                        <select class="formUsuarios" id="sele" name="sele">
+                            <option value="1" <% if (user.getRol() == 1) { %>selected<% } %>>Profesor</option>
+                            <option value="2" <% if (user.getRol() == 2) { %>selected<% } %>>Administrador de aula</option>
+                            <option value="3" <% if (user.getRol() == 3) { %>selected<% } %>>Administrador general</option>
+                        </select>
+                        <%
+                            if (user.isActivo() == true) {
+                        %>
+                        <input type="submit" class="boton" id="activo" name="activo" value="Activo">
+                        <%
+                        } else {
+                        %>
+                        <input type="submit" class="boton" id="inactivo" name="inactivo" value="Inactivo">
+                        <%
+                            }
+                        %>
+                        <input type="submit" class="boton" id="eliminar" name="botonCRUDusers" value="Eliminar">
+                        <input type="submit" class="boton" id="modificar" name="botonCRUDusers" value="Modificar">
+                    </form>
+                    <%                }
+                    %>
+                </div>
+                <form id="formulario2" name="formulario" action="../../Controladores/controladorAdminGeneral.jsp" method="POST">
+                    <input type="submit" class="boton" id="aniadirUser" name="aniadirUser" value="Añadir">
+                </form>
+            </div>
         </main>
         <footer>
             <address>Nathaniel Lucas Olmo</address>

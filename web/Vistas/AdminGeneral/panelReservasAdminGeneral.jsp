@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-panelReservasAdminGeneral.css">
         <script>
@@ -35,7 +36,7 @@
                 <%
                     Usuario u = (Usuario) session.getAttribute("userLogin");
                     out.println(u.getNombre() + " " + u.getApellidos() + ":");
-                %>administrador general
+                %>profesor
             </h3>
             <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
                 <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
