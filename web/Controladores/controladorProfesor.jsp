@@ -18,14 +18,14 @@
      * reserva.
      */
     if (request.getParameter("libre") != null) {
-        String codAula = request.getParameter("seleAula");
+        String codAula = (String) session.getAttribute("aula");
         int codFranja = Integer.parseInt(request.getParameter("codFranja"));
         Usuario u = (Usuario) session.getAttribute("userLogin");
         int codUser = u.getCod_user();
-        String dia = (String) request.getParameter("fecha");
+        String dia = (String) session.getAttribute("dia");
         ConexionEstatica.nueva();
         ConexionEstatica.Insertar_Reserva(codAula, codFranja, codUser, dia);
-        ListaReservas lisReservas = ConexionEstatica.obtenerReservas(codUser);
+        ListaReservas lisReservas = ConexionEstatica.obtenerReservas(codAula, dia);
         session.setAttribute("listaReservas", lisReservas);
         ConexionEstatica.cerrarBD();
         int n = (Integer) session.getAttribute("rol");
@@ -39,7 +39,27 @@
             response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
         }
     }
-
+    
+    //************************************************************************//
+    //************************** Ver disponibilidad **************************//
+    //************************************************************************//
+    /**
+     * Este botón sirve para ver la disponibilidad de un aula.
+     */
+    if (request.getParameter("verDisponibilidad") != null) {
+        String aula = (String) request.getParameter("seleAula");
+        session.setAttribute("aula", aula);
+        String dia = (String) request.getParameter("fecha");
+        session.setAttribute("dia", dia);
+        ConexionEstatica.nueva();
+        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
+        ListaReservas lisReservas = ConexionEstatica.obtenerReservas(aula, dia);
+        session.setAttribute("listaFranjas", lisFranjas);
+        session.setAttribute("listaReservas", lisReservas);
+        ConexionEstatica.cerrarBD();
+        response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
+    }
+    
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

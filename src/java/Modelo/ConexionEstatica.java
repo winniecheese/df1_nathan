@@ -247,11 +247,11 @@ public class ConexionEstatica {
     }
     
     //------------------------------------------------------------------------//
-    public static ListaReservas obtenerReservas(int codUser) {
+    public static ListaReservas obtenerReservas(String codAula, String dia) {
         ListaReservas lis = new ListaReservas();
         Reserva r = null;
         try {
-            String sentencia = "SELECT * FROM reservas WHERE cod_user = '" + codUser + "'";
+            String sentencia = "SELECT * FROM reservas WHERE cod_aula = '" + codAula + "' AND dia = '" + dia + "'";
             ConexionEstatica.Conj_Registros = ConexionEstatica.Sentencia_SQL.executeQuery(sentencia);
             while (Conj_Registros.next()) {
                 r = new Reserva(Conj_Registros.getInt("cod_reserva"), Conj_Registros.getInt("cod_aula"), Conj_Registros.getInt("cod_franja"), Conj_Registros.getInt("cod_user"), Conj_Registros.getString("dia"));

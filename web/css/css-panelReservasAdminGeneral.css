@@ -183,8 +183,25 @@ main h3 {
     background-color: #FFFF5F;
 }
 
+#verDisponibilidad {
+    margin: 10px auto 10px;
+    width: 130px;
+    height: 30px;
+    border: 2px solid #4DD52F;
+    border-radius: 7px;
+    background-color: #BAFFAB;
+    cursor: pointer;
+    color: #167B00;
+    font-weight: bold;
+}
+
+#verDisponibilidad:hover {
+    background-color: #74F259;
+}
+
 #aulaSelected {
-    margin: 10px auto 40px;
+    margin: 10px 0px 20px;
+    text-align: center;
 }
 
 #tabla {
@@ -195,13 +212,12 @@ main h3 {
 }
 
 #formulario2 {
-    
+    display: flex;
+    justify-content: space-around;
 }
 
 #panelReservas2 {
     margin: 0px 0px 40px;
-    display: flex;
-    justify-content: space-around;
 }
 
 .formPanel {
@@ -227,6 +243,21 @@ main h3 {
 
 #libre:hover {
     background-color: #74F259;
+}
+
+#reservado {
+    width: 110px;
+    border: 2px solid #B31010;
+    border-radius: 7px;
+    background-color: #FF3A3A;
+    color: #6D0000;
+    font-weight: bold;
+    height: 24px;
+    padding: 0px;
+}
+
+#reservado:hover {
+    background-color: #E62525;
 }
 
 #volver {
