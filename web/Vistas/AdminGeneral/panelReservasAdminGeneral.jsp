@@ -75,16 +75,12 @@
                         out.println(aulaSeleccionada);
                         %></p>
                 </div>
-                <table id="tabla">
-                    <thead>
-                        <tr>
-                            <th>Código de franja</th>
-                            <th>Empieza</th>
-                            <th>Termina</th>
-                            <th>Reservado</th>
-                        </tr>
-                    </thead>
-                </table>
+                <div id="encabezado">
+                    <p>Código de franja</p>
+                    <p>Empieza</p>
+                    <p>Termina</p>
+                    <p>Reservado</p>
+                </div>
                 <%
                     for (int i = 0; i < lisFran.size(); i++) {
                         Franja fran = lisFran.get(i);

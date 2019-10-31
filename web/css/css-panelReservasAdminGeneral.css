@@ -204,8 +204,9 @@ main h3 {
     text-align: center;
 }
 
-#tabla {
+#encabezado {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0px 10px;
     font-size: 11pt;
