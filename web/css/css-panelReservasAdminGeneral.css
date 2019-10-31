@@ -195,12 +195,13 @@ main h3 {
 }
 
 #formulario2 {
-    display: flex;
-    justify-content: space-around;
+    
 }
 
 #panelReservas2 {
     margin: 0px 0px 40px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .formPanel {
