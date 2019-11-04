@@ -28,8 +28,8 @@
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
-                            <li><a href="panelReservas.jsp">Profesor</a></li>
-                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                            <li><a href="../Profesor/panelReservas.jsp">Profesor</a></li>
+                            <li><a href="menuAdminAula.jsp">Administrador de aula</a></li>
                             <li><a href="../AdminGeneral/menuAdminGeneral.jsp">Administrador general</a></li>
                         </ul>
                     </li>
@@ -55,8 +55,8 @@
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
-                            <li><a href="panelReservas.jsp">Profesor</a></li>
-                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                            <li><a href="../Profesor/panelReservas.jsp">Profesor</a></li>
+                            <li><a href="menuAdminAula.jsp">Administrador de aula</a></li>
                         </ul>
                     </li>
                 </ul>

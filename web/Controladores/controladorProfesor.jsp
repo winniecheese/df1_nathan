@@ -28,18 +28,9 @@
         ListaReservas lisReservas = ConexionEstatica.obtenerReservas(codAula, dia);
         session.setAttribute("listaReservas", lisReservas);
         ConexionEstatica.cerrarBD();
-        int n = (Integer) session.getAttribute("rol");
-        if (n == 1) {
-            response.sendRedirect("../Vistas/Profesor/panelReservasProfesor.jsp");
-        }
-        if (n == 2) {
-            response.sendRedirect("../Vistas/AdminAula/panelReservasAdminAula.jsp");
-        }
-        if (n == 3) {
-            response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
-        }
+        response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
     }
-    
+
     //************************************************************************//
     //************************** Ver disponibilidad **************************//
     //************************************************************************//
@@ -57,9 +48,9 @@
         session.setAttribute("listaFranjas", lisFranjas);
         session.setAttribute("listaReservas", lisReservas);
         ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
+        response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
     }
-    
+
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

@@ -136,37 +136,6 @@
         response.sendRedirect("../Vistas/AdminGeneral/crudUsuarios.jsp");
     }
 
-    //------------------------------------------------------------------------//
-    //-------------- Si el usuario trabaja como Admin. de Aula ---------------//
-    //------------------------------------------------------------------------//
-    //************************************************************************//
-    //*************************** Gestionar aulas ****************************//
-    //************************************************************************//
-    /**
-     * Este botón nos lleva al CRUD de gestión de aulas.
-     */
-    if (request.getParameter("gestAulas2") != null) {
-        ConexionEstatica.nueva();
-        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
-        session.setAttribute("listaAulas", lisAulas);
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
-    }
-
-    //************************************************************************//
-    //********************** Gestionar franjas horarias **********************//
-    //************************************************************************//
-    /**
-     * Este botón nos lleva al CRUD de gestión de franjas horarias.
-     */
-    if (request.getParameter("gestFranjas2") != null) {
-        ConexionEstatica.nueva();
-        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
-        session.setAttribute("listaFranjas", lisFranjas);
-        ConexionEstatica.cerrarBD();
-        response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
-    }
-
     //************************************************************************//
     //************************************************************************//
     //************************************************************************//

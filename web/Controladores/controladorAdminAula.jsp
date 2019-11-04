@@ -26,7 +26,7 @@
     /**
      * Este botón nos lleva al CRUD de gestión de aulas.
      */
-    if (request.getParameter("gestAulas1") != null) {
+    if (request.getParameter("gestAulas") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         session.setAttribute("listaAulas", lisAulas);
@@ -40,7 +40,7 @@
     /**
      * Este botón nos lleva al CRUD de gestión de franjas horarias.
      */
-    if (request.getParameter("gestFranjas1") != null) {
+    if (request.getParameter("gestFranjas") != null) {
         ConexionEstatica.nueva();
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         session.setAttribute("listaFranjas", lisFranjas);
@@ -63,13 +63,7 @@
             ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
             session.setAttribute("listaAulas", lisAulas);
             ConexionEstatica.cerrarBD();
-            int n = (Integer) session.getAttribute("rol");
-            if (n == 2) {
-                response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
-            }
-            if (n == 3) {
-                response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
-            }
+            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
         }
         if (request.getParameter("botonCRUDaulas").equals("Modificar")) {
             ConexionEstatica.nueva();
@@ -79,13 +73,7 @@
             ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
             session.setAttribute("listaAulas", lisAulas);
             ConexionEstatica.cerrarBD();
-            int n = (Integer) session.getAttribute("rol");
-            if (n == 2) {
-                response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
-            }
-            if (n == 3) {
-                response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
-            }
+            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
         }
     }
 
@@ -104,13 +92,7 @@
             ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
             session.setAttribute("listaFranjas", lisFranjas);
             ConexionEstatica.cerrarBD();
-            int n = (Integer) session.getAttribute("rol");
-            if (n == 2) {
-                response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
-            }
-            if (n == 3) {
-                response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
-            }
+            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
         }
         if (request.getParameter("botonCRUDfranjas").equals("Modificar")) {
             ConexionEstatica.nueva();
@@ -121,13 +103,7 @@
             ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
             session.setAttribute("listaFranjas", lisFranjas);
             ConexionEstatica.cerrarBD();
-            int n = (Integer) session.getAttribute("rol");
-            if (n == 2) {
-                response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
-            }
-            if (n == 3) {
-                response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
-            }
+            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
         }
     }
 
@@ -146,13 +122,7 @@
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         session.setAttribute("listaAulas", lisAulas);
         ConexionEstatica.cerrarBD();
-        int n = (Integer) session.getAttribute("rol");
-        if (n == 2) {
-            response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
-        }
-        if (n == 3) {
-            response.sendRedirect("../Vistas/AdminGeneral/crudAulas2.jsp");
-        }
+        response.sendRedirect("../Vistas/AdminAula/crudAulas.jsp");
     }
 
     //************************************************************************//
@@ -170,13 +140,7 @@
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         session.setAttribute("listaFranjas", lisFranjas);
         ConexionEstatica.cerrarBD();
-        int n = (Integer) session.getAttribute("rol");
-        if (n == 2) {
-            response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
-        }
-        if (n == 3) {
-            response.sendRedirect("../Vistas/AdminGeneral/crudFranjas2.jsp");
-        }
+        response.sendRedirect("../Vistas/AdminAula/crudFranjas.jsp");
     }
 
     //************************************************************************//

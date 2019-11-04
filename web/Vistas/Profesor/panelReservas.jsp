@@ -116,7 +116,13 @@
                     </select>
                     <input type="submit" id="verDisponibilidad" name="verDisponibilidad" value="Ver disponibilidad">
                     <input type="submit" id="verCuadrante" name="verCuadrante" value="Ver cuadrante">
+                    <%
+                        if (rol == 2 || rol == 3) {
+                    %>
                     <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                    <%
+                        }
+                    %>
                 </form>
                 <%
                     String aulaSeleccionada = (String) session.getAttribute("aula");
