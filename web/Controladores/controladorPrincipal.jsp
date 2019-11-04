@@ -36,7 +36,7 @@
             session.setAttribute("listaFranjas", lisFranjas);
             ConexionEstatica.cerrarBD();
             if (n == 1) {
-                response.sendRedirect("../Vistas/Profesor/panelReservasProfesor.jsp");
+                response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
             }
             if (n == 2) {
                 response.sendRedirect("../Vistas/Principal/rol2.jsp");
@@ -99,36 +99,17 @@
      * seleccionar el rol con el que queremos entrar. Esto dependerá de los
      * permisos que tengamos.
      */
-    //------------------------------------------------------------------------//
-    //--------------------- Rol de administrador de aula ---------------------//
-    //------------------------------------------------------------------------//
-    if (request.getParameter("prof1") != null) {
+    if (request.getParameter("prof") != null) {
         ConexionEstatica.nueva();
         ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         ConexionEstatica.cerrarBD();
         session.setAttribute("listaAulas", lisAulas);
         session.setAttribute("listaFranjas", lisFranjas);
-        response.sendRedirect("../Vistas/AdminAula/panelReservasAdminAula.jsp");
+        response.sendRedirect("../Vistas/Profesor/panelReservas.jsp");
     }
-    if (request.getParameter("adminAula1") != null) {
+    if (request.getParameter("adminAula") != null) {
         response.sendRedirect("../Vistas/AdminAula/menuAdminAula.jsp");
-    }
-
-    //------------------------------------------------------------------------//
-    //--------------------- Rol de administrador general ---------------------//
-    //------------------------------------------------------------------------//
-    if (request.getParameter("prof2") != null) {
-        ConexionEstatica.nueva();
-        ListaAulas lisAulas = ConexionEstatica.obtenerAulas();
-        ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
-        ConexionEstatica.cerrarBD();
-        session.setAttribute("listaAulas", lisAulas);
-        session.setAttribute("listaFranjas", lisFranjas);
-        response.sendRedirect("../Vistas/AdminGeneral/panelReservasAdminGeneral.jsp");
-    }
-    if (request.getParameter("adminAula2") != null) {
-        response.sendRedirect("../Vistas/AdminGeneral/menuAdminAula2.jsp");
     }
     if (request.getParameter("adminGen") != null) {
         response.sendRedirect("../Vistas/AdminGeneral/menuAdminGeneral.jsp");

@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-crudUsuarios.css">
         <script>
@@ -24,9 +25,9 @@
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
-                            <li><a href="panelReservasAdminGeneral.jsp">Profesor</a></li>
-                            <li><a href="menuAdminAula2.jsp">Administrador de aula</a></li>
-                            <li><a href="menuAdminGeneral.jsp">Administrador general</a></li>
+                            <li><a href="panelReservas.jsp">Profesor</a></li>
+                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                            <li><a href="../AdminGeneral/menuAdminGeneral.jsp">Administrador general</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -20,14 +20,18 @@
         </script>
     </head>
     <body>
+        <%
+            int rol = (Integer) session.getAttribute("rol");
+            if (rol == 3) {
+        %>
         <header>
             <nav id="menuV">
                 <ul>
                     <li><a href="#">Forma de trabajo</a>
                         <ul>
-                            <li><a href="panelReservasAdminGeneral.jsp">Profesor</a></li>
-                            <li><a href="menuAdminAula2.jsp">Administrador de aula</a></li>
-                            <li><a href="menuAdminGeneral.jsp">Administrador general</a></li>
+                            <li><a href="panelReservas.jsp">Profesor</a></li>
+                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                            <li><a href="../AdminGeneral/menuAdminGeneral.jsp">Administrador general</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -43,13 +47,63 @@
                 <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
             </form>
         </header>
+        <%
+            }
+            if (rol == 2) {
+        %>
+        <header>
+            <nav id="menuV">
+                <ul>
+                    <li><a href="#">Forma de trabajo</a>
+                        <ul>
+                            <li><a href="panelReservas.jsp">Profesor</a></li>
+                            <li><a href="../AdminAula/menuAdminAula.jsp">Administrador de aula</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <h3 id="titulo">
+                <%
+                    Usuario u = (Usuario) session.getAttribute("userLogin");
+                    out.println(u.getNombre() + " " + u.getApellidos() + ":");
+                %>profesor
+            </h3>
+            <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
+                <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
+            </form>
+        </header>
+        <%
+            }
+            if (rol == 1) {
+        %>
+        <header>
+            <nav id="menuV">
+                <ul>
+                    <li><a href="#">Profesor</a></li>
+                </ul>
+            </nav>
+            <h3 id="titulo">
+                <%
+                    Usuario u = (Usuario) session.getAttribute("userLogin");
+                    out.println(u.getNombre() + " " + u.getApellidos() + ":");
+                %>profesor
+            </h3>
+            <form id="formularioHeader" name="formulario" action="../../Controladores/controladorPrincipal.jsp" method="POST">
+                <input type="submit" id="editarPerfil" name="editarPerfil" value="웃" title="Editar perfil">
+                <input type="submit" id="cerrarS" name="cerrarS" value="☠" title="Cerrar sesión">
+            </form>
+        </header>
+        <%
+            }
+        %>
         <main>
             <h3>Panel de reservas</h3>
             <div id="panelReservas">
                 <form id="formulario1" name="formulario1" action="../../Controladores/controladorProfesor.jsp" method="POST">
                     <input type="date" id="fecha" name="fecha" value="2019-10-31" min="2019-10-31">
                     <select id="seleAula" name="seleAula">
-                        <%
+                        <%                            ListaReservas lisReservas = (ListaReservas) session.getAttribute("listaReservas");
                             ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
 
                             for (int i = 0; i < lis.size(); i++) {
@@ -91,7 +145,6 @@
                         <input type="text" class="formPanel" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
                         <input type="text" class="formPanel" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
                         <%
-                            ListaReservas lisReservas = (ListaReservas) session.getAttribute("listaReservas");
                             boolean encontrado = false;
                             for (int j = 0; j < lisReservas.size(); j++) {
                                 Reserva r = lisReservas.get(j);
