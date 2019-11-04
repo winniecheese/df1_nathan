@@ -10,8 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-crudFranjas.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -77,40 +77,38 @@
         %>
         <main>
             <h3>Lista de franjas horarias</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Empieza</th>
-                        <th>Termina</th>
-                    </tr>
-                </thead>
-            </table>
-            <%
-                ListaFranjas lisFranjas = (ListaFranjas) session.getAttribute("listaFranjas");
+            <div id="crudFranjas">
+                <div id="encabezado">
+                    <p>Código</p>
+                    <p>Empieza</p>
+                    <p>Termina</p>
+                </div>
+                <%
+                    ListaFranjas lisFranjas = (ListaFranjas) session.getAttribute("listaFranjas");
 
-                for (int i = 0; i < lisFranjas.size(); i++) {
-                    Franja fran = lisFranjas.get(i);
-            %>
-            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
-                <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
-                <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
-                <input type="submit" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
-                <input type="submit" id="modificar" name="botonCRUDfranjas" value="Modificar">
-            </form>
-            <%
-                }
-            %>
-            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                <input type="text" id="newCod" name="newCod" value="" placeholder="Este campo se rellena solo" readonly="">
-                <input type="text" id="newHoraEmp" name="newHoraEmp" value="">
-                <input type="text" id="newHoraTer" name="newHoraTer" value="">
-                <input type="submit" id="aniadir" name="aniadirFranja" value="Añadir">
-                <br>
-                <br>
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
-            </form>
+                    for (int i = 0; i < lisFranjas.size(); i++) {
+                        Franja fran = lisFranjas.get(i);
+                %>
+                <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                    <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
+                    <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
+                    <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
+                    <input type="submit" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
+                    <input type="submit" id="modificar" name="botonCRUDfranjas" value="Modificar">
+                </form>
+                <%
+                    }
+                %>
+                <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                    <input type="text" id="newCod" name="newCod" value="" placeholder="Este campo se rellena solo" readonly="">
+                    <input type="text" id="newHoraEmp" name="newHoraEmp" value="">
+                    <input type="text" id="newHoraTer" name="newHoraTer" value="">
+                    <input type="submit" id="aniadir" name="aniadirFranja" value="Añadir">
+                    <br>
+                    <br>
+                    <input type="button" name="volver" value="Volver" onclick="goBack()">
+                </form>
+            </div>
         </main>
         <footer>
             <address>Nathaniel Lucas Olmo</address>

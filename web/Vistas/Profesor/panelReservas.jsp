@@ -10,9 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
-        <link rel="stylesheet" type="text/css" href="../../css/css-panelReservasAdminGeneral.css">
+        <link rel="stylesheet" type="text/css" href="../../css/css-panelReservas.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -135,21 +134,21 @@
                         out.println(aulaSeleccionada);
                         %></p>
                 </div>
-                <div id="encabezado">
-                    <p>Código de franja</p>
-                    <p>Empieza</p>
-                    <p>Termina</p>
-                    <p>Reservado</p>
-                </div>
-                <%
-                    for (int i = 0; i < lisFran.size(); i++) {
-                        Franja fran = lisFran.get(i);
-                %>
                 <div id="panelReservas2">
+                    <div id="encabezado">
+                        <p id="codEnc">Código de franja</p>
+                        <p id="empEnc">Empieza</p>
+                        <p id="terEnc">Termina</p>
+                        <p id="botEnc">Reservado</p>
+                    </div>
+                    <%
+                        for (int i = 0; i < lisFran.size(); i++) {
+                            Franja fran = lisFran.get(i);
+                    %>
                     <form id="formulario2" name="formulario2" action="../../Controladores/controladorProfesor.jsp" method="POST">
-                        <input type="text" class="formPanel" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
-                        <input type="text" class="formPanel" id="horaEmp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
-                        <input type="text" class="formPanel" id="horaTer" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
+                        <input type="text" class="formPanel" id="cod" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
+                        <input type="text" class="formPanel" id="emp" name="horaEmp" value="<%=fran.getHora_empieza()%>" readonly="">
+                        <input type="text" class="formPanel" id="ter" name="horaTer" value="<%=fran.getHora_termina()%>" readonly="">
                         <%
                             boolean encontrado = false;
                             for (int j = 0; j < lisReservas.size(); j++) {
@@ -161,18 +160,20 @@
 
                                 if (encontrado == false) {
                         %>
-                        <input type="submit" class="formPanel" id="libre" name="libre" value="Libre">
+                        <input type="submit" class="formPanel" id="bot1" name="libre" value="Libre">
                         <%                            } else {
                         %>
-                        <input type="submit" class="formPanel" id="reservado" name="reservado" value="Reservado" disabled="">
+                        <input type="submit" class="formPanel" id="bot2" name="reservado" value="Reservado" disabled="">
                         <%
+                                }
                             }
                         %>
                     </form>
+                    <%
+                        }
+                    %>
                 </div>
                 <%
-                            }
-                        }
                     }
                 %>
             </div>
