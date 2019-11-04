@@ -140,8 +140,8 @@ main h3 {
 #panelReservas {
     border: 1px solid #003B64;
     background-color: #81B3D5;
-    width: 500px;
-    margin: 50px auto 0px;
+    width: 600px;
+    margin: 50px auto 80px;
 }
 
 #formulario1 {
@@ -200,50 +200,54 @@ main h3 {
 }
 
 #aulaSelected {
-    margin: 10px 0px 20px;
+    padding: 5px 0px;
+    margin-bottom: 20px;
     text-align: center;
+    background-color: #61A0CC;
+    border-top: 1px solid #003B64;
+    border-bottom: 1px solid #003B64;
 }
 
 #panelReservas2 {
-    margin: 0px 0px 40px;
-    display: grid;
-    grid-template-areas:    "encab"
-                            "cuerpo";
-    grid-template-columns: 100%;
-    grid-template-rows: 20px auto;
+    margin: 0px 40px 40px;
 }
 
 #encabezado {
-    grid-area: encab;
+    margin-bottom: 10px;
     font-size: 11pt;
     display: grid;
     grid-template-areas: "codEnc empEnc terEnc botEnc";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 20px;
+    grid-gap: 0px 20px;
 }
 
 #formulario2 {
-    grid-area: cuerpo;
     display: grid;
     grid-template-areas: "cod emp ter bot";
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
+    grid-gap: 0px 20px;
 }
 
 #codEnc {
     grid-area: codEnc;
+    border-bottom: 1px solid #003B64;
 }
 
 #empEnc {
     grid-area: empEnc;
+    border-bottom: 1px solid #003B64;
 }
 
 #terEnc {
     grid-area: terEnc;
+    border-bottom: 1px solid #003B64;
 }
 
 #botEnc {
     grid-area: botEnc;
+    border-bottom: 1px solid #003B64;
 }
 
 #cod {
