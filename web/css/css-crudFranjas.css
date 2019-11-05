@@ -140,16 +140,94 @@ main h3 {
 #crudFranjas {
     border: 1px solid #003B64;
     background-color: #81B3D5;
-    width: 500px;
-    margin: 50px auto 0px;
+    width: 600px;
+    margin: 50px auto 80px;
 }
 
 #encabezado {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0px 10px;
+    margin-bottom: 10px;
     font-size: 11pt;
+    display: grid;
+    grid-template-areas: "codEnc empEnc terEnc";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 20px;
+    grid-gap: 0px 20px;
+}
+
+#formulario1 {
+    display: grid;
+    grid-template-areas: "cod emp ter eli mod";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0px 20px;
+}
+
+#formulario2 {
+    display: grid;
+    grid-template-areas: "newCod newEmp newTer newBot";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0px 20px;
+}
+
+#codEnc {
+    grid-area: codEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#empEnc {
+    grid-area: empEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#terEnc {
+    grid-area: terEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#codFranja {
+    grid-area: cod;
+}
+
+#horaEmpieza {
+    grid-area: emp;
+}
+
+#horaTermina {
+    grid-area: ter;
+}
+
+#eliminar {
+    grid-area: eli;
+}
+
+#modificar {
+    grid-area: mod;
+}
+
+#newCod {
+    grid-area: newCod;
+}
+
+#newHoraEmp {
+    grid-area: newEmp;
+}
+
+#newHoraTer {
+    grid-area: newTer;
+}
+
+#aniadir {
+    grid-area: newBot;
+}
+
+.formFranjas {
+    width: 90px;
+    height: 20px;
+    margin: 5px 0px;
+    background-color: #D5DBDF;
+    border: 1px solid #003B64;
+    padding-left: 10px;
 }
 
 #volver {

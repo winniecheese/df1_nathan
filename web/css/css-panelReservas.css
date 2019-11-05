@@ -200,6 +200,7 @@ main h3 {
 }
 
 #aulaSelected {
+    font-weight: bold;
     padding: 5px 0px;
     margin-bottom: 20px;
     text-align: center;

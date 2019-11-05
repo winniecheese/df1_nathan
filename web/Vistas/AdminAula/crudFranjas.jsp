@@ -79,34 +79,32 @@
             <h3>Lista de franjas horarias</h3>
             <div id="crudFranjas">
                 <div id="encabezado">
-                    <p>Código</p>
-                    <p>Empieza</p>
-                    <p>Termina</p>
+                    <p id="codEnc">Código</p>
+                    <p id="empEnc">Empieza</p>
+                    <p id="terEnc">Termina</p>
                 </div>
+                <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
                 <%
                     ListaFranjas lisFranjas = (ListaFranjas) session.getAttribute("listaFranjas");
 
                     for (int i = 0; i < lisFranjas.size(); i++) {
                         Franja fran = lisFranjas.get(i);
                 %>
-                <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                    <input type="text" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
-                    <input type="text" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
-                    <input type="text" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
-                    <input type="submit" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
-                    <input type="submit" id="modificar" name="botonCRUDfranjas" value="Modificar">
+                <form id="formulario1" name="formulario1" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                    <input type="text" class="formFranjas" id="codFranja" name="codFranja" value="<%=fran.getCod_franja()%>" readonly="">
+                    <input type="text" class="formFranjas" id="horaEmpieza" name="horaEmpieza" value="<%=fran.getHora_empieza()%>">
+                    <input type="text" class="formFranjas" id="horaTermina" name="horaTermina" value="<%=fran.getHora_termina()%>">
+                    <input type="submit" class="formFranjas" id="eliminar" name="botonCRUDfranjas" value="Eliminar">
+                    <input type="submit" class="formFranjas" id="modificar" name="botonCRUDfranjas" value="Modificar">
                 </form>
                 <%
                     }
                 %>
-                <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                    <input type="text" id="newCod" name="newCod" value="" placeholder="Este campo se rellena solo" readonly="">
-                    <input type="text" id="newHoraEmp" name="newHoraEmp" value="">
-                    <input type="text" id="newHoraTer" name="newHoraTer" value="">
-                    <input type="submit" id="aniadir" name="aniadirFranja" value="Añadir">
-                    <br>
-                    <br>
-                    <input type="button" name="volver" value="Volver" onclick="goBack()">
+                <form id="formulario2" name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                    <input type="text" class="formFranjas" id="newCod" name="newCod" value="" placeholder="Este campo se rellena solo" readonly="">
+                    <input type="text" class="formFranjas" id="newHoraEmp" name="newHoraEmp" value="">
+                    <input type="text" class="formFranjas" id="newHoraTer" name="newHoraTer" value="">
+                    <input type="submit" class="formFranjas" id="aniadir" name="aniadirFranja" value="Añadir">
                 </form>
             </div>
         </main>
