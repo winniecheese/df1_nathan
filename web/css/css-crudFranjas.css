@@ -55,6 +55,7 @@ footer {
     width: 200px;
     height: 50px;
     margin: 0px;
+    z-index: 1;
 }
 
 #titulo {
@@ -140,7 +141,7 @@ main h3 {
 #crudFranjas {
     border: 1px solid #003B64;
     background-color: #81B3D5;
-    width: 6500px;
+    width: 650px;
     margin: 50px auto 80px;
 }
 
