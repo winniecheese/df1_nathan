@@ -10,8 +10,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
+        <link rel="stylesheet" type="text/css" href="../../css/css-crudAulas.css">
         <script>
             function goBack() {
                 window.history.back();
@@ -77,37 +77,35 @@
         %>
         <main>
             <h3>Lista de aulas</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Código de aula</th>
-                        <th>Descripción</th>
-                    </tr>
-                </thead>
-            </table>
-            <%
-                ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
+            <div id="crudAulas">
+                <input type="button" id="volver" name="volver" value="🡸" onclick="goBack()">
+                <div id="crudAulas2">
+                    <div id="encabezado">
+                        <p id="codEnc">Código</p>
+                        <p id="descEnc">Descripción</p>
+                    </div>
+                    <%
+                        ListaAulas lis = (ListaAulas) session.getAttribute("listaAulas");
 
-                for (int i = 0; i < lis.size(); i++) {
-                    Aula aul = lis.get(i);
-            %>
-            <form name="formulario" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                <input type="text" id="codAula" name="codAula" value="<%=aul.getCod_aula()%>">
-                <input type="text" id="nombreAula" name="nombreAula" value="<%=aul.getDescripcion()%>">
-                <input type="submit" id="eliminar" name="botonCRUDaulas" value="Eliminar">
-                <input type="submit" id="modificar" name="botonCRUDaulas" value="Modificar">
-            </form>
-            <%
-                }
-            %>
-            <form name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
-                <input type="text" id="newCod" name="newCod" value="">
-                <input type="text" id="newDesc" name="newDesc" value="">
-                <input type="submit" id="aniadir" name="aniadirAula" value="Añadir">
-                <br>
-                <br>
-                <input type="button" name="volver" value="Volver" onclick="goBack()">
-            </form>
+                        for (int i = 0; i < lis.size(); i++) {
+                            Aula aul = lis.get(i);
+                    %>
+                    <form id="formulario1" name="formulario1" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                        <input type="text" class="formAulas" id="codAula" name="codAula" value="<%=aul.getCod_aula()%>">
+                        <input type="text" class="formAulas" id="nombreAula" name="nombreAula" value="<%=aul.getDescripcion()%>" title="<%=aul.getDescripcion()%>">
+                        <input type="submit" class="formAulas" id="eliminar" name="botonCRUDaulas" value="Eliminar">
+                        <input type="submit" class="formAulas" id="modificar" name="botonCRUDaulas" value="Modificar">
+                    </form>
+                    <%
+                        }
+                    %>
+                    <form id="formulario2" name="formulario2" action="../../Controladores/controladorAdminAula.jsp" method="POST">
+                        <input type="text" class="formAulas" id="newCod" name="newCod" value="">
+                        <input type="text" class="formAulas" id="newDesc" name="newDesc" value="">
+                        <input type="submit" class="formAulas" id="aniadir" name="aniadirAula" value="Añadir">
+                    </form>
+                </div>
+            </div>
         </main>
         <footer>
             <address>Nathaniel Lucas Olmo</address>
