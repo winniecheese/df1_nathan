@@ -140,7 +140,7 @@ main h3 {
 #crudAulas {
     border: 1px solid #003B64;
     background-color: #81B3D5;
-    width: 600px;
+    width: 480px;
     margin: 50px auto 80px;
 }
 
@@ -190,7 +190,7 @@ main h3 {
 
 #nombreAula {
     grid-area: desc;
-    width: 100px;
+    width: 70px;
 }
 
 #eliminar {
@@ -233,7 +233,7 @@ main h3 {
 
 #newDesc {
     grid-area: newDesc;
-    width: 100px;
+    width: 70px;
 }
 
 #aniadir {
