@@ -55,6 +55,7 @@ footer {
     width: 200px;
     height: 50px;
     margin: 0px;
+    z-index: 1;
 }
 
 #titulo {
@@ -130,11 +131,11 @@ nav > ul > li > ul > li {
     border-top: 1px solid #246CBD;
 }
 
-#tabla {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 10px 0px;
-    font-size: 11pt;
+main h3 {
+    text-align: center;
+    background-color: #B3D9F3;
+    padding: 10px 0px;
+    color: #003B64;
 }
 
 .formUsuarios {
@@ -156,14 +157,41 @@ nav > ul > li > ul > li {
     height: 27px;
 }
 
+#encabezado {
+    margin: 40px 20px 10px;
+    font-size: 11pt;
+    display: grid;
+    grid-template-areas: "mailEnc nomEnc apeEnc perEnc";
+    grid-template-columns: repeat(4, 147px);
+    grid-template-rows: 20px;
+    grid-gap: 0px 20px;
+}
+
+#mailEnc {
+    grid-area: mailEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#nomEnc {
+    grid-area: nomEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#apeEnc {
+    grid-area: apeEnc;
+    border-bottom: 1px solid #003B64;
+}
+
+#perEnc {
+    grid-area: perEnc;
+    border-bottom: 1px solid #003B64;
+}
+
 #divUsuarios {
     border: 1px solid #003B64;
     background-color: #81B3D5;
     width: 900px;
     margin: 50px auto 0px;
-}
-#divUsuarios2 {
-    margin: 10px auto;
 }
 
 #formulario1 {
