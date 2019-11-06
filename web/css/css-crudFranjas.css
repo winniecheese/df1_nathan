@@ -144,8 +144,12 @@ main h3 {
     margin: 50px auto 80px;
 }
 
+#crudFranjas2 {
+    margin: 0px 40px 40px;
+}
+
 #encabezado {
-    margin-bottom: 10px;
+    margin: 40px 0px 10px;
     font-size: 11pt;
     display: grid;
     grid-template-areas: "codEnc empEnc terEnc";
@@ -199,10 +203,36 @@ main h3 {
 
 #eliminar {
     grid-area: eli;
+    padding: 0px;
+    border: 2px solid #B31010;
+    border-radius: 7px;
+    background-color: #FF3A3A;
+    color: #6D0000;
+    font-weight: bold;
+    width: 65px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#eliminar:hover {
+    background-color: #E62525;
 }
 
 #modificar {
     grid-area: mod;
+    padding: 0px;
+    border: 2px solid #091A32;
+    border-radius: 7px;
+    background-color: #1E4E8E;
+    color: #CBE1FF;
+    font-weight: bold;
+    width: 65px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#modificar:hover {
+    background-color: #0F3568;
 }
 
 #newCod {
@@ -219,11 +249,24 @@ main h3 {
 
 #aniadir {
     grid-area: newBot;
+    padding: 0px;
+    border: 2px solid #4DD52F;
+    border-radius: 7px;
+    background-color: #BAFFAB;
+    color: #167B00;
+    font-weight: bold;
+    width: 65px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#aniadir:hover {
+    background-color: #74F259;
 }
 
 .formFranjas {
-    width: 90px;
-    height: 20px;
+    width: 50px;
+    height: 25px;
     margin: 5px 0px;
     background-color: #D5DBDF;
     border: 1px solid #003B64;

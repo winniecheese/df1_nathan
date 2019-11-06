@@ -185,8 +185,8 @@ public class ConexionEstatica {
     //************************* MÉTODOS PARA FRANJAS *************************//
     //************************************************************************//
     //------------------------------------------------------------------------//
-    public static void Insertar_Franja(String horaEmpieza, String horaTermina) throws SQLException {
-        String Sentencia = "INSERT INTO franja_horaria VALUES (0,'" + horaEmpieza + "','" + horaTermina + "')";
+    public static void Insertar_Franja(int codFranja, String horaEmpieza, String horaTermina) throws SQLException {
+        String Sentencia = "INSERT INTO franja_horaria VALUES (" + codFranja + ",'" + horaEmpieza + "','" + horaTermina + "')";
         Sentencia_SQL.executeUpdate(Sentencia);
     }
 

@@ -133,10 +133,11 @@
      * valores desde el CRUD de franjas horarias.
      */
     if (request.getParameter("aniadirFranja") != null) {
+        int codFranja = Integer.parseInt(request.getParameter("newCod"));
         String newHoraEmp = request.getParameter("newHoraEmp");
         String newHoraTer = request.getParameter("newHoraTer");
         ConexionEstatica.nueva();
-        ConexionEstatica.Insertar_Franja(newHoraEmp, newHoraTer);
+        ConexionEstatica.Insertar_Franja(codFranja, newHoraEmp, newHoraTer);
         ListaFranjas lisFranjas = ConexionEstatica.obtenerFranjas();
         session.setAttribute("listaFranjas", lisFranjas);
         ConexionEstatica.cerrarBD();
