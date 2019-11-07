@@ -10,134 +10,6 @@ and open the template in the editor.
 
 @charset "UTF-8";
 
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-html {
-    background-color: #C8E9FF;
-}
-
-header {
-    margin: 10px;
-    background-color: #81B3D5;
-    margin: 0px;
-    color: #003B64;
-    display: flex;
-    justify-content: space-between;
-}
-
-body {
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    width: 100%;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    margin: 0px;
-    text-align: center;
-    background-color: #81B3D5;
-    color: #003B64;
-}
-
-#menuV {
-    display: flex;
-    flex-direction: column;
-    background-color: #003B64;
-    width: 200px;
-    height: 50px;
-    margin: 0px;
-    z-index: 1;
-}
-
-#titulo {
-    line-height: 50px;
-}
-
-#editarPerfil {
-    margin: 0px;
-    width: 50px;
-    height: 50px;
-    font-size: 20pt;
-    cursor: pointer;
-    border: 1px solid #003B64;
-    background-color: #317EB7;
-    color: #00233C;
-}
-
-#editarPerfil:hover {
-    background-color: #22689B;
-}
-
-#cerrarS {
-    margin: 0px;
-    width: 50px;
-    height: 50px;
-    font-size: 20pt;
-    cursor: pointer;
-    border: 1px solid #B31010;
-    background-color: #FF3A3A;
-    color: #6D0000;
-}
-
-#cerrarS:hover {
-    background-color: #E62525;
-}
-
-#formularioHeader {
-    width: 200px;
-    display: flex;
-    justify-content: flex-end;
-}
-
-#menuV > ul {
-    width: 200px;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 11pt;
-    color: #D6EFFF;
-    line-height: 50px;
-    display: block;
-    text-align: center;
-}
-
-nav ul li a:hover {
-    background-color: #005087;
-}
-
-nav > ul > li > ul {
-    visibility: hidden;
-    background-color: #003B64;
-}
-
-nav > ul > li:hover ul {
-    visibility: visible;
-    display: flex;
-    flex-direction: column;
-}
-
-nav > ul > li > ul > li {
-    border-top: 1px solid #246CBD;
-}
-
-main h3 {
-    text-align: center;
-    background-color: #B3D9F3;
-    padding: 10px 0px;
-    color: #003B64;
-}
-
 #crudAulas {
     border: 1px solid #003B64;
     background-color: #81B3D5;
@@ -254,17 +126,6 @@ main h3 {
     background-color: #74F259;
 }
 
-#volver {
-    width: 35px;
-    border: 1px solid #B31010;
-    background-color: #FF3A3A;
-    height: 30px;
-    cursor: pointer;
-    color: #6D0000;
-    font-size: 14pt;
-    position: absolute;
-}
-
 .formAulas {
     width: 50px;
     height: 25px;
@@ -272,8 +133,4 @@ main h3 {
     background-color: #D5DBDF;
     border: 1px solid #003B64;
     padding-left: 10px;
-}
-
-#volver:hover {
-    background-color: #E62525;
 }

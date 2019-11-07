@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-crudFranjas.css">
+        <link rel="stylesheet" type="text/css" href="../../css/css-general.css">
         <script>
             function goBack() {
                 window.history.back();

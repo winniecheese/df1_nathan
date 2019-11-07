@@ -18,6 +18,7 @@
         <meta http-equiv="refresh" content="60;url=../../index.jsp">
         <title>Desafío nº1</title>
         <link rel="stylesheet" type="text/css" href="../../css/css-registro2.css">
+        <link rel="stylesheet" type="text/css" href="../../css/css-general.css">
         <script>
             function goBack() {
                 window.history.back();
